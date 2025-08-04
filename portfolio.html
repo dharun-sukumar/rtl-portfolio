@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Professional Portfolio | Astriol Creative Solutions</title>
+	<meta name="description" content="Discover our professional portfolio showcasing innovative web design, mobile applications, branding, and digital solutions that drive business growth.">
+	<meta name="keywords" content="portfolio, web design, mobile apps, branding, UI/UX, digital solutions">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/simple-line-icons/css/simple-line-icons.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/themify-icons/css/themify-icons.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/components-elegant-icons/css/elegant-icons.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/swiper/css/swiper.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/magnific-popup/css/magnific-popup.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/theme.css" type="text/css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
+
+	<!-- Custom Portfolio Styles -->
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		:root {
+			--primary-color: #2563eb;
+			--secondary-color: #1e40af;
+			--accent-color: #0ea5e9;
+			--dark-color: #0f172a;
+			--light-color: #f8fafc;
+			--text-color: #475569;
+			--border-color: #e2e8f0;
+			--success-color: #059669;
+			--warning-color: #d97706;
+			--error-color: #dc2626;
+			--gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+			--gradient-dark: linear-gradient(135deg, var(--dark-color) 0%, #1e293b 100%);
+			--shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			--shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+			--shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+		}
+
+		.portfolio-hero {
+			background: var(--gradient-primary);
+			color: white;
+			padding: 120px 0 80px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.portfolio-hero::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('media/banner/banner-bg.jpg') center/cover;
+			opacity: 0.1;
+		}
+
+		.portfolio-hero .container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.portfolio-stats {
+			display: flex;
+			gap: 2rem;
+			margin-top: 2rem;
+		}
+
+		.stat-item {
+			text-align: center;
+		}
+
+		.stat-number {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: var(--accent-color);
+			display: block;
+		}
+
+		.stat-label {
+			font-size: 0.9rem;
+			opacity: 0.8;
+		}
+
+		.portfolio-filter {
+			background: white;
+			padding: 2rem 0;
+			box-shadow: var(--shadow-sm);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+
+		.filter-buttons {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 1rem;
+		}
+
+		.filter-btn {
+			padding: 0.75rem 1.5rem;
+			border: 2px solid var(--border-color);
+			background: white;
+			color: var(--text-color);
+			border-radius: 50px;
+			font-weight: 500;
+			transition: all 0.3s ease;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		.filter-btn:hover,
+		.filter-btn.active {
+			background: var(--primary-color);
+			color: white;
+			border-color: var(--primary-color);
+			transform: none;
+		}
+
+		.portfolio-grid {
+			padding: 4rem 0;
+		}
+
+		.portfolio-item {
+			margin-bottom: 3rem;
+			border-radius: 12px;
+			overflow: hidden;
+			background: white;
+			box-shadow: var(--shadow-md);
+			transition: all 0.3s ease;
+		}
+
+		.portfolio-item:hover {
+			transform: translateY(-4px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		.portfolio-image {
+			position: relative;
+			overflow: hidden;
+			aspect-ratio: 16/10;
+		}
+
+		.portfolio-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease;
+		}
+
+		.portfolio-item:hover .portfolio-image img {
+			transform: scale(1.02);
+		}
+
+		.portfolio-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: var(--gradient-primary);
+			opacity: 0;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+		}
+
+		.portfolio-item:hover .portfolio-overlay {
+			opacity: 1;
+		}
+
+		.portfolio-btn {
+			width: 50px;
+			height: 50px;
+			background: white;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--primary-color);
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.portfolio-btn:hover {
+			transform: none;
+			background: var(--accent-color);
+			color: white;
+		}
+
+		.portfolio-content {
+			padding: 2rem;
+		}
+
+		.portfolio-category {
+			background: var(--light-color);
+			color: var(--primary-color);
+			padding: 0.25rem 0.75rem;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+
+		.portfolio-title {
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: var(--dark-color);
+			margin-bottom: 0.75rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.portfolio-title a {
+			color: inherit;
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		.portfolio-title a:hover {
+			color: var(--primary-color);
+		}
+
+		.portfolio-description {
+			color: var(--text-color);
+			line-height: 1.6;
+			margin-bottom: 1.5rem;
+		}
+
+		.portfolio-tech {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+
+		.tech-tag {
+			background: #f1f5f9;
+			color: #64748b;
+			padding: 0.25rem 0.75rem;
+			border-radius: 12px;
+			font-size: 0.8rem;
+			font-weight: 500;
+		}
+
+		.cta-section {
+			background: var(--gradient-dark);
+			color: white;
+			padding: 6rem 0;
+			text-align: center;
+		}
+
+		.cta-title {
+			font-size: 3rem;
+			font-weight: 700;
+			margin-bottom: 1.5rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.cta-description {
+			font-size: 1.25rem;
+			opacity: 0.9;
+			margin-bottom: 3rem;
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.cta-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 1.5rem;
+			flex-wrap: wrap;
+		}
+
+		.btn-primary {
+			background: var(--primary-color);
+			border: 2px solid var(--primary-color);
+			color: white;
+			padding: 1rem 2rem;
+			border-radius: 50px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s ease;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.btn-primary:hover {
+			background: transparent;
+			color: var(--primary-color);
+			transform: none;
+		}
+
+		.btn-outline {
+			background: transparent;
+			border: 2px solid white;
+			color: white;
+			padding: 1rem 2rem;
+			border-radius: 50px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.btn-outline:hover {
+			background: white;
+			color: var(--dark-color);
+			transform: none;
+		}
+
+		/* RTL Support */
+		[dir="rtl"] {
+			text-align: right;
+		}
+
+		[dir="rtl"] .site-logo {
+			margin-right: 0;
+			margin-left: auto;
+		}
+
+		[dir="rtl"] .nav-right {
+			float: left;
+		}
+
+		[dir="rtl"] .astriol-main-menu {
+			text-align: right;
+		}
+
+		[dir="rtl"] .breadcrumbs {
+			direction: rtl;
+		}
+
+		[dir="rtl"] .breadcrumbs li:after {
+			content: "";
+		}
+
+		[dir="rtl"] .breadcrumbs li:before {
+			content: "/";
+			margin: 0 5px;
+		}
+
+		[dir="rtl"] .breadcrumbs li:first-child:before {
+			content: "";
+		}
+
+		[dir="rtl"] .portfolio-content {
+			text-align: right;
+		}
+
+		[dir="rtl"] .portfolio-tech {
+			justify-content: flex-end;
+		}
+
+		[dir="rtl"] .contact-icon {
+			margin-left: 1.5rem;
+			margin-right: 0;
+		}
+
+		[dir="rtl"] .footer-social-link {
+			justify-content: flex-end;
+		}
+
+		[dir="rtl"] .footer-menu {
+			text-align: right;
+		}
+
+		[dir="rtl"] .contact-info {
+			text-align: right;
+		}
+
+		[dir="rtl"] .widget-description {
+			text-align: right;
+		}
+
+		[dir="rtl"] .copyright-text {
+			text-align: right;
+		}
+
+		[dir="rtl"] .filter-buttons {
+			direction: rtl;
+		}
+
+		[dir="rtl"] .cta-buttons {
+			direction: rtl;
+		}
+
+		@media (max-width: 768px) {
+			.portfolio-stats {
+				justify-content: center;
+			}
+			
+			.filter-buttons {
+				justify-content: center;
+			}
+			
+			.cta-title {
+				font-size: 2rem;
+			}
+			
+			.cta-buttons {
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	</style>
+</head>
+
+<body class="portfolio-page">
+
+	<a href="#main_content" data-type="section-switch" class="return-to-top">
+		<i class="fa fa-chevron-up"></i>
+	</a>
+
+	<div class="page-loader">
+		<div class="page-loading-wrapper">
+			<div class="loading loading07">
+				<span data-text="A">A</span>
+				<span data-text="S">S</span>
+				<span data-text="T">T</span>
+				<span data-text="R">R</span>
+				<span data-text="I">I</span>
+				<span data-text="O">O</span>
+				<span data-text="L">L</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="main_content" class="main-content">
+
+		<!--=========================-->
+		<!--=        Navbar         =-->
+		<!--=========================-->
+		<header class="site-header header-light header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
+			<div class="container">
+				<div class="header-inner">
+					<nav id="site-navigation" class="main-nav">
+						<div class="site-logo">
+							<a href="index.html" class="logo">
+								<img src="assets/img/logo-sticky.png" alt="Astriol Logo" class="main-logo">
+								<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
+							</a>
+						</div>
+
+						<div class="menu-wrapper main-nav-container canvas-menu-wrapper" id="mega-menu-wrap">
+							<div class="canvas-header">
+								<div class="mobile-offcanvas-logo">
+									<a href="index.html">
+										<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
+									</a>
+								</div>
+								<div class="close-menu" id="page-close-main-menu">
+									<i class="ti-close"></i>
+								</div>
+							</div>
+
+							<ul class="astriol-main-menu">
+								<li class="has-submenu menu-item-depth-0">
+									<a href="index.html">Home</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Home 1</a></li>
+										<li><a href="index-v2.html">Home 2</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li class="current-menu-item"><a href="portfolio.html">Portfolio</a></li>
+								<li class="has-submenu menu-item-depth-0">
+									<a href="#">Dashboard</a>
+									<ul class="sub-menu">
+										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+										<li><a href="user-dashboard.html">User Dashboard</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="nav-right">
+							<a href="login.html" class="gp-btn btn-outline btn-round">Change for Free</a>
+							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px;">RTL</button>
+							<div class="astriol-burger-menu" id="mobile-menu-open">
+								<span class="bar-one"></span>
+								<span class="bar-two"></span>
+								<span class="bar-three"></span>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!--==========================-->
+		<!--=         Banner         =-->
+		<!--==========================-->
+		<section class="page-banner">
+			<div class="page-title-wrapper text-center">
+				<h1 class="page-title">Portfolio</h1>
+
+				<ul class="breadcrumbs">
+					<li><a href="index.html">Home</a></li>
+					<li>Portfolio</li>
+				</ul>
+			</div>
+			<!-- /.page-title-wrapper -->
+
+			<ul class="banner-pertical">
+				<li><img src="media/banner/header/crose.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/box.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/dot.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/dot_sm.png" data-parallax='{"y": 100}' alt="astriol pertical"></li>
+				<li><img src="media/banner/header/line.png" data-parallax='{"y": 50, "x": 100}' alt="astriol pertical"></li>
+				<li data-parallax='{"y": -100}'></li>
+				<li></li>
+			</ul>
+			<!-- /.banner-pertical -->
+
+		</section>
+		<!-- /.page-banner -->
+
+		<!--==========================-->
+		<!--=     Portfolio Filter   =-->
+		<!--==========================-->
+		<section class="portfolio-filter">
+			<div class="container">
+				<div class="filter-buttons">
+					<button class="filter-btn active" data-filter="*">All Projects</button>
+					<button class="filter-btn" data-filter=".web-design">Web Design</button>
+					<button class="filter-btn" data-filter=".mobile-app">Mobile Apps</button>
+					<button class="filter-btn" data-filter=".branding">Branding</button>
+					<button class="filter-btn" data-filter=".ui-ux">UI/UX Design</button>
+					<button class="filter-btn" data-filter=".ecommerce">E-commerce</button>
+				</div>
+			</div>
+		</section>
+
+		<!--==========================-->
+		<!--=     Portfolio Grid     =-->
+		<!--==========================-->
+		<section class="portfolio-grid">
+			<div class="container">
+				<div class="row portfolio-items" id="portfolio-container">
+					
+					<!-- Portfolio Item 1 -->
+					<div class="col-lg-6 col-md-6 portfolio-item web-design ecommerce">
+						<div class="portfolio-image">
+							<img src="media/portfolio/1.jpg" alt="E-commerce Platform">
+							<div class="portfolio-overlay">
+								<a href="media/portfolio/1.jpg" class="portfolio-btn popup-image">
+									<i class="fas fa-search-plus"></i>
+								</a>
+								<a href="#" class="portfolio-btn">
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+						</div>
+						<div class="portfolio-content">
+							<span class="portfolio-category">E-commerce</span>
+							<h3 class="portfolio-title">
+								<a href="#">Luxury Fashion E-commerce Platform</a>
+							</h3>
+							<p class="portfolio-description">
+								A sophisticated e-commerce platform featuring advanced product filtering, secure payment integration, and personalized shopping experiences that increased conversion rates by 45%.
+							</p>
+							<div class="portfolio-tech">
+								<span class="tech-tag">React</span>
+								<span class="tech-tag">Node.js</span>
+								<span class="tech-tag">Stripe</span>
+								<span class="tech-tag">MongoDB</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Portfolio Item 2 -->
+					<div class="col-lg-6 col-md-6 portfolio-item mobile-app ui-ux">
+						<div class="portfolio-image">
+							<img src="media/portfolio/2.jpg" alt="Mobile Banking App">
+							<div class="portfolio-overlay">
+								<a href="media/portfolio/2.jpg" class="portfolio-btn popup-image">
+									<i class="fas fa-search-plus"></i>
+								</a>
+								<a href="#" class="portfolio-btn">
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+						</div>
+						<div class="portfolio-content">
+							<span class="portfolio-category">Mobile App</span>
+							<h3 class="portfolio-title">
+								<a href="#">FinTech Mobile Banking Solution</a>
+							</h3>
+							<p class="portfolio-description">
+								Secure and intuitive mobile banking application with biometric authentication, real-time transactions, AI-powered financial insights, and comprehensive wealth management tools.
+							</p>
+							<div class="portfolio-tech">
+								<span class="tech-tag">React Native</span>
+								<span class="tech-tag">Firebase</span>
+								<span class="tech-tag">Biometric API</span>
+								<span class="tech-tag">AI/ML</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Portfolio Item 3 -->
+					<div class="col-lg-6 col-md-6 portfolio-item branding ui-ux">
+						<div class="portfolio-image">
+							<img src="media/portfolio/3.jpg" alt="Brand Identity">
+							<div class="portfolio-overlay">
+								<a href="media/portfolio/3.jpg" class="portfolio-btn popup-image">
+									<i class="fas fa-search-plus"></i>
+								</a>
+								<a href="#" class="portfolio-btn">
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+						</div>
+						<div class="portfolio-content">
+							<span class="portfolio-category">Branding</span>
+							<h3 class="portfolio-title">
+								<a href="#">TechStart Corporate Identity</a>
+							</h3>
+							<p class="portfolio-description">
+								Complete brand identity transformation including logo design, visual guidelines, marketing materials, and digital presence that established market leadership position.
+							</p>
+							<div class="portfolio-tech">
+								<span class="tech-tag">Adobe Creative Suite</span>
+								<span class="tech-tag">Figma</span>
+								<span class="tech-tag">Brand Strategy</span>
+								<span class="tech-tag">Print Design</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Portfolio Item 4 -->
+					<div class="col-lg-6 col-md-6 portfolio-item web-design ui-ux">
+						<div class="portfolio-image">
+							<img src="media/portfolio/4.jpg" alt="SaaS Dashboard">
+							<div class="portfolio-overlay">
+								<a href="media/portfolio/4.jpg" class="portfolio-btn popup-image">
+									<i class="fas fa-search-plus"></i>
+								</a>
+								<a href="#" class="portfolio-btn">
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+						</div>
+						<div class="portfolio-content">
+							<span class="portfolio-category">SaaS Platform</span>
+							<h3 class="portfolio-title">
+								<a href="#">Analytics Dashboard Platform</a>
+							</h3>
+							<p class="portfolio-description">
+								Advanced SaaS analytics platform with real-time data visualization, customizable reports, team collaboration features, and API integrations for enterprise clients.
+							</p>
+							<div class="portfolio-tech">
+								<span class="tech-tag">Vue.js</span>
+								<span class="tech-tag">D3.js</span>
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">PostgreSQL</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Portfolio Item 5 -->
+					<div class="col-lg-6 col-md-6 portfolio-item mobile-app ui-ux">
+						<div class="portfolio-image">
+							<img src="media/portfolio/5.jpg" alt="Fitness App">
+							<div class="portfolio-overlay">
+								<a href="media/portfolio/5.jpg" class="portfolio-btn popup-image">
+									<i class="fas fa-search-plus"></i>
+								</a>
+								<a href="#" class="portfolio-btn">
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+						</div>
+						<div class="portfolio-content">
+							<span class="portfolio-category">Health & Fitness</span>
+							<h3 class="portfolio-title">
+								<a href="#">AI-Powered Fitness Companion</a>
+							</h3>
+							<p class="portfolio-description">
+								Comprehensive fitness application with AI personal trainer, workout tracking, nutrition planning, social features, and wearable device integration.
+							</p>
+							<div class="portfolio-tech">
+								<span class="tech-tag">Flutter</span>
+								<span class="tech-tag">TensorFlow</span>
+								<span class="tech-tag">HealthKit</span>
+								<span class="tech-tag">AWS</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Portfolio Item 6 -->
+					<div class="col-lg-6 col-md-6 portfolio-item web-design ecommerce">
+						<div class="portfolio-image">
+							<img src="media/portfolio/6.jpg" alt="Restaurant Platform">
+							<div class="portfolio-overlay">
+								<a href="media/portfolio/6.jpg" class="portfolio-btn popup-image">
+									<i class="fas fa-search-plus"></i>
+								</a>
+								<a href="#" class="portfolio-btn">
+									<i class="fas fa-external-link-alt"></i>
+								</a>
+							</div>
+						</div>
+						<div class="portfolio-content">
+							<span class="portfolio-category">Restaurant Tech</span>
+							<h3 class="portfolio-title">
+								<a href="#">Multi-Restaurant Ordering Platform</a>
+							</h3>
+							<p class="portfolio-description">
+								Comprehensive restaurant management platform with online ordering, table reservations, kitchen management, delivery tracking, and customer loyalty programs.
+							</p>
+							<div class="portfolio-tech">
+								<span class="tech-tag">Next.js</span>
+								<span class="tech-tag">Express.js</span>
+								<span class="tech-tag">Redis</span>
+								<span class="tech-tag">Payment APIs</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!--==========================-->
+		<!--=       Call to Action   =-->
+		<!--==========================-->
+		<section class="cta-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2 class="cta-title">
+							Ready to Start Your Next Project?
+						</h2>
+						<p class="cta-description">
+							Let's collaborate to bring your vision to life with innovative design and cutting-edge technology solutions that drive real business results.
+						</p>
+						<div class="cta-buttons">
+							<a href="contact.html" class="btn-primary">
+								<i class="fas fa-rocket"></i>
+								Start Your Project
+							</a>
+							<a href="about.html" class="btn-outline">
+								Learn More About Us
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--=========================-->
+		<!--=        Footer         =-->
+		<!--=========================-->
+		<footer class="site-footer" id="footer-saas-two">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="widget footer-widget widget-about">
+							<div class="footer-logo">
+								<img src="assets/img/logo-saas-light.png" alt="Astriol Logo">
+							</div>
+							<p class="widget-description">
+								Creating innovative digital solutions that transform businesses and deliver exceptional user experiences.
+							</p>
+							<div class="copyright-text">
+								<p>Copyright © 2025 Astriol by <a href="http://gptheme.com">GpTheme</a>. All Rights Reserved</p>
+							</div>
+							<ul class="footer-social-link">
+								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Services</h3>
+							<ul class="footer-menu">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">Mobile Apps</a></li>
+								<li><a href="#">UI/UX Design</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">E-commerce</a></li>
+								<li><a href="#">Consulting</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Quick Links</h3>
+							<ul class="footer-menu">
+								<li><a href="about.html">About Astriol</a></li>
+								<li><a href="portfolio.html">Our Portfolio</a></li>
+								<li><a href="pricing.html">Pricing Plans</a></li>
+								<li><a href="blog.html">Latest News</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="#">Career Opportunities</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Contact Info</h3>
+							<div class="contact-info">
+								<p><i class="fas fa-map-marker-alt"></i> 123 Business Street, Tech City, TC 12345</p>
+								<p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+								<p><i class="fas fa-envelope"></i> hello@astriol.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom-shape">
+				<div class="three-left">
+					<img src="media/footer/tree_left.png" alt="Decorative tree">
+				</div>
+				<div class="three-right">
+					<img src="media/footer/tree_right.png" alt="Decorative tree">
+				</div>
+				<div class="container">
+					<div class="footer-center-victor">
+						<div class="foo-shape-one">
+							<img src="media/footer/man-female1.png" alt="Team member">
+						</div>
+						<div class="foo-shape-two">
+							<img src="media/footer/man1.png" alt="Team member">
+						</div>
+						<div class="foo-shape-three">
+							<img src="media/footer/man-female2.png" alt="Team member">
+						</div>
+						<div class="foo-shape-four">
+							<img src="media/footer/man2.png" alt="Team member">
+						</div>
+						<div class="foo-shape-five">
+							<img src="media/footer/vase.png" alt="Decorative vase">
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Dependency Scripts -->
+	<script src="dependencies/jquery/jquery.min.js"></script>
+	<script src="dependencies/popper.js/popper.min.js"></script>
+	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+	<script src="dependencies/wow/js/wow.min.js"></script>
+	<script src="dependencies/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+
+	<!-- Site Scripts -->
+	<script src="assets/js/header.js"></script>
+	<script src="assets/js/app.js"></script>
+
+	<!-- Portfolio Filter Script -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Initialize Isotope
+			const portfolioContainer = document.getElementById('portfolio-container');
+			const iso = new Isotope(portfolioContainer, {
+				itemSelector: '.portfolio-item',
+				layoutMode: 'fitRows'
+			});
+
+			// Filter functionality
+			const filterButtons = document.querySelectorAll('.filter-btn');
+			filterButtons.forEach(button => {
+				button.addEventListener('click', function() {
+					// Remove active class from all buttons
+					filterButtons.forEach(btn => btn.classList.remove('active'));
+					// Add active class to clicked button
+					this.classList.add('active');
+					
+					// Filter items
+					const filterValue = this.getAttribute('data-filter');
+					iso.arrange({ filter: filterValue });
+				});
+			});
+
+			// Initialize Magnific Popup
+			$('.popup-image').magnificPopup({
+				type: 'image',
+				gallery: {
+					enabled: true
+				}
+			});
+
+			// Professional fade-in effect without bouncy animations
+			$('.portfolio-item').each(function(index) {
+				$(this).css('opacity', '0').delay(index * 100).animate({
+					opacity: 1
+				}, 300);
+			});
+		});
+	</script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const rtlToggle = document.getElementById('rtl-toggle');
+			if (rtlToggle) {
+				rtlToggle.addEventListener('click', function() {
+					const html = document.documentElement;
+					if (html.getAttribute('dir') === 'rtl') {
+						html.setAttribute('dir', 'ltr');
+						rtlToggle.textContent = 'RTL';
+						localStorage.setItem('astriol-rtl', 'ltr');
+					} else {
+						html.setAttribute('dir', 'rtl');
+						rtlToggle.textContent = 'LTR';
+						localStorage.setItem('astriol-rtl', 'rtl');
+					}
+				});
+				// On load, set dir from localStorage
+				const savedDir = localStorage.getItem('astriol-rtl');
+				if (savedDir === 'rtl') {
+					setTimeout(() => {
+						document.documentElement.setAttribute('dir', 'rtl');
+						rtlToggle.textContent = 'LTR';
+					}, 0);
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>

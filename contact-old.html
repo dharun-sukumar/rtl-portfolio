@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us | Astriol Creative Solutions</title>
+	<meta name="description" content="Get in touch with Astriol for your next digital project. Contact our team of experts for web design, mobile apps, and digital solutions.">
+	<meta name="keywords" content="contact, get in touch, digital agency, web design, consultation">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/simple-line-icons/css/simple-line-icons.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/themify-icons/css/themify-icons.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/components-elegant-icons/css/elegant-icons.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/wow/css/animate.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
+
+	<!-- Custom Contact Styles -->
+	<style>
+		:root {
+			--primary-color: #6366f1;
+			--secondary-color: #8b5cf6;
+			--accent-color: #06b6d4;
+			--dark-color: #1e293b;
+			--light-color: #f8fafc;
+			--text-color: #475569;
+			--border-color: #e2e8f0;
+			--success-color: #10b981;
+			--warning-color: #f59e0b;
+			--error-color: #ef4444;
+		}
+
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.contact-hero {
+			background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+			color: white;
+			padding: 80px 0 60px;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.contact-hero::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('media/banner/banner-bg.jpg') center/cover;
+			opacity: 0.1;
+		}
+
+		.contact-hero .container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.hero-title {
+			font-size: 3.5rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.hero-subtitle {
+			font-size: 1.25rem;
+			opacity: 0.9;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.contact-main {
+			padding: 100px 0;
+			background: var(--light-color);
+		}
+
+		.contact-card {
+			background: white;
+			border-radius: 20px;
+			padding: 3rem;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			margin-bottom: 2rem;
+			transition: transform 0.3s ease;
+		}
+
+		.contact-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.contact-info-card {
+			background: linear-gradient(135deg, var(--dark-color) 0%, #334155 100%);
+			color: white;
+		}
+
+		.section-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: var(--dark-color);
+			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.section-subtitle {
+			color: var(--text-color);
+			font-size: 1.1rem;
+			margin-bottom: 3rem;
+		}
+
+		.contact-info-item {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 2rem;
+			padding: 1.5rem;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 12px;
+			transition: background 0.3s ease;
+		}
+
+		.contact-info-item:hover {
+			background: rgba(255, 255, 255, 0.15);
+		}
+
+		.contact-icon {
+			width: 60px;
+			height: 60px;
+			background: var(--accent-color);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 1.5rem;
+			flex-shrink: 0;
+		}
+
+		.contact-icon i {
+			font-size: 1.5rem;
+			color: white;
+		}
+
+		.contact-details h4 {
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+			color: white;
+		}
+
+		.contact-details p {
+			margin: 0;
+			opacity: 0.9;
+		}
+
+		.contact-details a {
+			color: var(--accent-color);
+			text-decoration: none;
+			transition: opacity 0.3s ease;
+		}
+
+		.contact-details a:hover {
+			opacity: 0.8;
+		}
+
+		.form-group {
+			margin-bottom: 2rem;
+		}
+
+		.form-label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+			color: var(--dark-color);
+		}
+
+		.form-control {
+			width: 100%;
+			padding: 1rem 1.5rem;
+			border: 2px solid var(--border-color);
+			border-radius: 12px;
+			font-size: 1rem;
+			transition: all 0.3s ease;
+			background: white;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.form-control:focus {
+			outline: none;
+			border-color: var(--primary-color);
+			box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+		}
+
+		.form-control.textarea {
+			min-height: 150px;
+			resize: vertical;
+		}
+
+		.btn-submit {
+			background: var(--primary-color);
+			color: white;
+			border: none;
+			padding: 1rem 2.5rem;
+			border-radius: 50px;
+			font-weight: 600;
+			font-size: 1.1rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.btn-submit:hover {
+			background: var(--secondary-color);
+			transform: translateY(-2px);
+			box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+		}
+
+		.offices-section {
+			padding: 100px 0;
+			background: white;
+		}
+
+		.office-card {
+			text-align: center;
+			padding: 2rem;
+			border-radius: 16px;
+			transition: transform 0.3s ease;
+			border: 1px solid var(--border-color);
+		}
+
+		.office-card:hover {
+			transform: translateY(-5px);
+			border-color: var(--primary-color);
+		}
+
+		.office-icon {
+			width: 80px;
+			height: 80px;
+			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 1.5rem;
+		}
+
+		.office-icon i {
+			font-size: 2rem;
+			color: white;
+		}
+
+		.office-title {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--dark-color);
+			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.office-address {
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		.map-section {
+			height: 500px;
+			background: var(--border-color);
+			position: relative;
+		}
+
+		.faq-section {
+			padding: 100px 0;
+			background: var(--light-color);
+		}
+
+		.faq-item {
+			background: white;
+			border-radius: 12px;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+		}
+
+		.faq-question {
+			padding: 1.5rem;
+			cursor: pointer;
+			background: white;
+			border: none;
+			width: 100%;
+			text-align: left;
+			font-weight: 600;
+			color: var(--dark-color);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			transition: background 0.3s ease;
+		}
+
+		.faq-question:hover {
+			background: var(--light-color);
+		}
+
+		.faq-answer {
+			padding: 0 1.5rem 1.5rem;
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		@media (max-width: 768px) {
+			.hero-title {
+				font-size: 2.5rem;
+			}
+			
+			.contact-card {
+				padding: 2rem;
+			}
+			
+			.contact-main {
+				padding: 60px 0;
+			}
+			
+			.offices-section,
+			.faq-section {
+				padding: 60px 0;
+			}
+		}
+	</style>
+
+<body id="home-version-1" class="about-page-template" data-style="default">
+
+	<a href="#main_content" data-type="section-switch" class="return-to-top">
+		<i class="fa fa-chevron-up"></i>
+	</a>
+
+	<div class="page-loader">
+		<div class="page-loading-wrapper">
+			<div class="loading loading07">
+				<span data-text="A">A</span>
+				<span data-text="S">S</span>
+				<span data-text="T">T</span>
+				<span data-text="R">R</span>
+				<span data-text="I">I</span>
+				<span data-text="O">O</span>
+				<span data-text="L">L</span>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="main_content" class="main-content">
+
+
+		<!--=========================-->
+		<!--=        Navbar         =-->
+		<!--=========================-->
+		<header class="site-header header-light header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
+			<div class="container">
+				<div class="header-inner">
+
+					<nav id="site-navigation" class="main-nav">
+
+						<div class="site-logo">
+							<a href="index.html" class="logo">
+								<img src="assets/img/logo-sticky.png" alt="Astriol Logo" class="main-logo">
+								<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
+							</a>
+						</div>
+						<!-- /.site-logo -->
+
+						<div class="menu-wrapper main-nav-container canvas-menu-wrapper" id="mega-menu-wrap">
+							<div class="canvas-header">
+								<div class="mobile-offcanvas-logo">
+									<a href="index.html">
+										<img src="assets/img/logo-community.png" alt="site logo" class="logo-sticky">
+									</a>
+								</div>
+
+								<div class="close-menu" id="page-close-main-menu">
+									<i class="ti-close"></i>
+								</div>
+
+							</div>
+
+							<ul class="astriol-main-menu">
+								<li class="has-submenu menu-item-depth-0">
+									<a href="index.html">Home</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Home 1</a></li>
+										<li><a href="index-v2.html">Home 2</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">About</a></li>
+								<li class="current-menu-item"><a href="contact.html">Contact</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="portfolio.html">Portfolio</a></li>
+								<li class="has-submenu menu-item-depth-0">
+									<a href="#">Dashboard</a>
+									<ul class="sub-menu">
+										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+										<li><a href="user-dashboard.html">User Dashboard</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- /.menu-wrapper -->
+
+						<div class="nav-right">
+							<a href="login.html" class="gp-btn btn-outline btn-round">Change for Free</a>
+
+							<div class="astriol-burger-menu" id="mobile-menu-open">
+								<span class="bar-one"></span>
+								<span class="bar-two"></span>
+								<span class="bar-three"></span>
+							</div>
+						</div>
+
+					</nav>
+					<!-- /.site-nav -->
+				</div>
+				<!-- /.header-inner -->
+			</div>
+			<!-- /.container-full -->
+		</header>
+		<!-- /.site-header -->
+
+		<!--==========================-->
+		<!--=         Banner         =-->
+		<!--==========================-->
+		<section class="page-banner">
+			<div class="page-title-wrapper text-center">
+				<h1 class="page-title">Contact Us</h1>
+
+				<ul class="breadcrumbs">
+					<li><a href="index.html">Home</a></li>
+					<li>Contact Us</li>
+				</ul>
+			</div>
+			<!-- /.page-title-wrapper -->
+
+			<ul class="banner-pertical">
+				<li><img src="media/banner/header/crose.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/box.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/dot.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/dot_sm.png" data-parallax='{"y": 100}' alt="astriol pertical"></li>
+				<li><img src="media/banner/header/line.png" data-parallax='{"y": 50, "x": 100}' alt="astriol pertical"></li>
+				<li data-parallax='{"y": -100}'></li>
+				<li></li>
+			</ul>
+			<!-- /.banner-pertical -->
+		</section>
+		<!-- /.page-banner -->
+
+		<!--================================-->
+		<!--=         Contact Form         =-->
+		<!--================================-->
+		<section class="contact-form-page">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="contact-information">
+							<h3 class="contact-title">Contact Us</h3>
+
+							<p class="description">
+								Got a project in mind? Fill in the form
+								or send us a <a href="mailto:info@gptheme.com">direct email</a>.
+							</p>
+
+							<div class="info-list">
+								<h3 class="info-title">Phone:</h3>
+								<p>
+									+(347 124 574 342)
+								</p>
+							</div>
+							<!-- /.info-list -->
+
+							<div class="info-list">
+								<h3 class="info-title">Email:</h3>
+								<p>
+									Support@astriol.com
+								</p>
+							</div>
+							<!-- /.info-list -->
+
+							<div class="info-list mb-0">
+								<h3 class="info-title">Address:</h3>
+								<p>
+									541 Melville Astriol, Palo Alto,
+									DUSS 943, United States
+								</p>
+							</div>
+							<!-- /.info-list -->
+
+						</div>
+						<!-- /.contact-information -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-8">
+						<div class="contact-form-wrapper">
+							<form action="php/mailer.php" class="contact-form-main" data-gp-form="contact-form">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" name="fname" placeholder="Name" class="gp-input">
+									</div>
+									<!-- /.col-md-6 -->
+
+									<div class="col-md-6">
+										<input type="email" name="email" placeholder="Email" class="gp-input">
+									</div>
+									<!-- /.col-md-6 -->
+
+									<div class="col-md-12">
+										<input type="text" name="subject" placeholder="Subject" class="gp-input">
+										<textarea name="content" id="message" cols="30" rows="10" class="gp-input gp-textarea" placeholder="Your Comment"></textarea>
+										<button type="submit" class="gp-btn btn-submit">Send Message</button>
+
+										<div class="form-result alert">
+											<div class="content"></div>
+										</div>
+										<!-- /.form-result-->
+									</div>
+								</div>
+								<!-- /.row -->
+							</form>
+							<!-- /.contact-form-main -->
+						</div>
+						<!-- /.contact-form-wrapper -->
+					</div>
+					<!-- /.col-md-8 -->
+				</div>
+				<!-- /.row -->
+
+				<div class="row mt-140">
+					<div class="col-sm-4">
+						<div class="address-box style-border">
+							<h4 class="address-title">
+								New York
+							</h4>
+
+							<p class="address">
+								340 Hilldale Lane Maryville, TN<br>
+								46802, United States
+							</p>
+						</div>
+						<!-- /.address-box -->
+					</div>
+					<!-- /.col-sm-4 -->
+
+					<div class="col-sm-4">
+						<div class="address-box">
+							<h4 class="address-title">
+								Australia
+							</h4>
+
+							<p class="address">
+								8201 44th Avenue NE, TN 22842,<br>
+								Australia
+							</p>
+						</div>
+						<!-- /.address-box -->
+					</div>
+					<!-- /.col-sm-4 -->
+
+					<div class="col-sm-4">
+						<div class="address-box">
+							<h4 class="address-title">
+								London
+							</h4>
+
+							<p class="address">
+								425 Montgomery Street,<br>
+								TN 37803, London
+							</p>
+						</div>
+						<!-- /.address-box -->
+					</div>
+					<!-- /.col-sm-4 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</section>
+		<!-- /.contact-form-page -->
+
+		<!--==============================-->
+		<!--=         Google Map         =-->
+		<!--==============================-->
+		<section class="google-map">
+			<div class="gmap3-area" data-lat="40.712776" data-lng="-74.005974" data-address="Address" data-zoom="16" data-mrkr="media/feature/marker.svg" data-scrollwheel="false"></div>
+		</section>
+		<!-- /.google-map -->
+
+		<!--=========================-->
+		<!--=        Footer         =-->
+		<!--=========================-->
+		<footer class="site-footer" id="footer-saas-two">
+			<div class="container">
+				<div class="">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<div class="widget footer-widget widget-about">
+								<div class="footer-logo">
+									<img src="assets/img/logo-saas-light.png" alt="site-logo">
+								</div>
+								<div class="copyright-text">
+									<p class="copyright-text">Copyright © 2021 Astriol by <a href="http://gptheme.com">GpTheme</a>. All Rights Reserved</p>
+								</div>
+
+								<ul class="footer-social-link">
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+							<!-- /.widget footer-widget -->
+						</div>
+						<!-- /.col-lg-3 col-md-6 -->
+
+						<div class="col-lg-3 col-md-6">
+							<div class="widget footer-widget">
+								<h3 class="widget-title">Download</h3>
+
+								<ul class="footer-menu">
+									<li><a href="#">Company</a></li>
+									<li><a href="#">Android App</a></li>
+									<li><a href="#">Ios App</a></li>
+									<li><a href="#">Desktop</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="#">Partners</a></li>
+									<li><a href="#">Careers</a></li>
+								</ul>
+							</div>
+							<!-- /.widget footer-widget -->
+						</div>
+						<!-- /.col-lg-3 col-md-6 -->
+
+						<div class="col-lg-3 col-md-6">
+							<div class="widget footer-widget">
+								<h3 class="widget-title">Quick Links</h3>
+
+								<ul class="footer-menu">
+									<li><a href="#">About Astriol</a></li>
+									<li><a href="#">Web Jobs</a></li>
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">Creative</a></li>
+									<li><a href="#">UI/UX</a></li>
+									<li><a href="#">Template</a></li>
+								</ul>
+							</div>
+							<!-- /.widget footer-widget -->
+						</div>
+						<!-- /.col-lg-3 col-md-6 -->
+
+						<div class="col-lg-2 col-md-6">
+							<div class="widget footer-widget">
+								<h3 class="widget-title">Information</h3>
+
+								<ul class="footer-menu">
+									<li><a href="#">Reporting</a></li>
+									<li><a href="#">Management </a></li>
+									<li><a href="#">Tracking </a></li>
+									<li><a href="#">Pricing </a></li>
+									<li><a href="#">Coinking </a></li>
+									<li><a href="#">Support </a></li>
+								</ul>
+							</div>
+							<!-- /.widget footer-widget -->
+						</div>
+						<!-- /.col-lg-3 col-md-6 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.footer-nner -->
+			</div>
+			<!-- /.container -->
+
+			<div class="footer-bottom-shape">
+				<div class="three-left">
+					<img src="media/footer/tree_left.png" alt="tree">
+				</div>
+
+				<div class="three-right">
+					<img src="media/footer/tree_right.png" alt="tree">
+				</div>
+
+				<div class="container">
+					<div class="footer-center-victor">
+						<div class="foo-shape-one">
+							<img src="media/footer/man-female1.png" alt="man">
+						</div>
+
+						<div class="foo-shape-two">
+							<img src="media/footer/man1.png" alt="man">
+						</div>
+
+						<div class="foo-shape-three">
+							<img src="media/footer/man-female2.png" alt="man">
+						</div>
+
+						<div class="foo-shape-four">
+							<img src="media/footer/man2.png" alt="man">
+						</div>
+
+						<div class="foo-shape-five">
+							<img src="media/footer/vase.png" alt="man">
+						</div>
+					</div>
+					<!-- /.footer-center-victor -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- /.footer-bottom-shape -->
+		</footer>
+		<!-- /#footer -->
+
+
+	</div>
+	<!-- /#site -->
+
+	<!-- Dependency Scripts -->
+	<script src="dependencies/jquery/jquery.min.js"></script>
+	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Site Scripts -->
+	<script src="assets/js/header.js"></script>
+	<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

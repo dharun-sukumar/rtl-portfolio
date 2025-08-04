@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Coming Soon - Astriol</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
+
+</head>
+
+<body id="coming-soon" class="coming-soon-page" data-style="default">
+
+	<div id="main_content" class="main-content">
+
+		<!--==========================-->
+		<!--=     Coming Soon        =-->
+		<!--==========================-->
+		<section class="coming-soon-section">
+			<div class="container">
+				<div class="coming-soon-wrapper">
+					<div class="coming-soon-content">
+						<div class="site-logo">
+							<img src="assets/img/logo-saas.png" alt="Astriol Logo" class="logo">
+						</div>
+
+						<h1 class="coming-soon-title">We're Coming Soon</h1>
+						<p class="coming-soon-description">
+							We're working hard to bring you something amazing. 
+							Stay tuned and be the first to know when we launch!
+						</p>
+
+						<div class="countdown-timer">
+							<div class="countdown-item">
+								<span class="countdown-number" id="days">45</span>
+								<span class="countdown-label">Days</span>
+							</div>
+							<div class="countdown-item">
+								<span class="countdown-number" id="hours">12</span>
+								<span class="countdown-label">Hours</span>
+							</div>
+							<div class="countdown-item">
+								<span class="countdown-number" id="minutes">30</span>
+								<span class="countdown-label">Minutes</span>
+							</div>
+							<div class="countdown-item">
+								<span class="countdown-number" id="seconds">15</span>
+								<span class="countdown-label">Seconds</span>
+							</div>
+						</div>
+
+						<div class="notify-form">
+							<h3>Get Notified When We Launch</h3>
+							<form action="php/subscribe.php" method="post" class="newsletter-form">
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" placeholder="Enter your email address" required>
+									<button type="submit" class="gp-btn color-two btn-circle">Notify Me</button>
+								</div>
+							</form>
+						</div>
+
+						<div class="social-links">
+							<h4>Follow Us</h4>
+							<ul class="social-list">
+								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+
+						<div class="back-link">
+							<a href="index.html" class="gp-btn btn-light btn-circle">Back to Home</a>
+						</div>
+					</div>
+
+					<div class="coming-soon-image">
+						<img src="media/banner/main/mockup.png" alt="Coming Soon" class="feature-image">
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Dependency Scripts -->
+	<script src="dependencies/jquery/jquery.min.js"></script>
+	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Site Scripts -->
+	<script src="assets/js/app.js"></script>
+
+	<script>
+		// Simple countdown timer
+		function updateCountdown() {
+			const targetDate = new Date('2025-09-15').getTime();
+			const now = new Date().getTime();
+			const difference = targetDate - now;
+
+			const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+			document.getElementById('days').innerHTML = days;
+			document.getElementById('hours').innerHTML = hours;
+			document.getElementById('minutes').innerHTML = minutes;
+			document.getElementById('seconds').innerHTML = seconds;
+
+			if (difference < 0) {
+				document.getElementById('days').innerHTML = '0';
+				document.getElementById('hours').innerHTML = '0';
+				document.getElementById('minutes').innerHTML = '0';
+				document.getElementById('seconds').innerHTML = '0';
+			}
+		}
+
+		setInterval(updateCountdown, 1000);
+		updateCountdown();
+	</script>
+
+</body>
+
+</html>

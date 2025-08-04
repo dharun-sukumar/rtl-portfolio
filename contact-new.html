@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us | Astriol Creative Solutions</title>
+	<meta name="description" content="Get in touch with Astriol for your next digital project. Contact our team of experts for web design, mobile apps, and digital solutions.">
+	<meta name="keywords" content="contact, get in touch, digital agency, web design, consultation">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/simple-line-icons/css/simple-line-icons.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/themify-icons/css/themify-icons.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/components-elegant-icons/css/elegant-icons.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/wow/css/animate.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
+
+	<!-- Custom Contact Styles -->
+	<style>
+		:root {
+			--primary-color: #6366f1;
+			--secondary-color: #8b5cf6;
+			--accent-color: #06b6d4;
+			--dark-color: #1e293b;
+			--light-color: #f8fafc;
+			--text-color: #475569;
+			--border-color: #e2e8f0;
+			--success-color: #10b981;
+			--warning-color: #f59e0b;
+			--error-color: #ef4444;
+		}
+
+		body {
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.contact-main {
+			padding: 100px 0;
+			background: var(--light-color);
+		}
+
+		.contact-card {
+			background: white;
+			border-radius: 20px;
+			padding: 3rem;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			margin-bottom: 2rem;
+			transition: transform 0.3s ease;
+		}
+
+		.contact-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.contact-info-card {
+			background: linear-gradient(135deg, var(--dark-color) 0%, #334155 100%);
+			color: white;
+		}
+
+		.section-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: var(--dark-color);
+			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.section-subtitle {
+			color: var(--text-color);
+			font-size: 1.1rem;
+			margin-bottom: 3rem;
+			line-height: 1.6;
+		}
+
+		.contact-info-item {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 2rem;
+			padding: 1.5rem;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 12px;
+			transition: background 0.3s ease;
+		}
+
+		.contact-info-item:hover {
+			background: rgba(255, 255, 255, 0.15);
+		}
+
+		.contact-icon {
+			width: 60px;
+			height: 60px;
+			background: var(--accent-color);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 1.5rem;
+			flex-shrink: 0;
+		}
+
+		.contact-icon i {
+			font-size: 1.5rem;
+			color: white;
+		}
+
+		.contact-details h4 {
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+			color: white;
+		}
+
+		.contact-details p {
+			margin: 0;
+			opacity: 0.9;
+			line-height: 1.5;
+		}
+
+		.contact-details a {
+			color: var(--accent-color);
+			text-decoration: none;
+			transition: opacity 0.3s ease;
+		}
+
+		.contact-details a:hover {
+			opacity: 0.8;
+		}
+
+		.form-group {
+			margin-bottom: 2rem;
+		}
+
+		.form-label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+			color: var(--dark-color);
+		}
+
+		.form-control {
+			width: 100%;
+			padding: 1rem 1.5rem;
+			border: 2px solid var(--border-color);
+			border-radius: 12px;
+			font-size: 1rem;
+			transition: all 0.3s ease;
+			background: white;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.form-control:focus {
+			outline: none;
+			border-color: var(--primary-color);
+			box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+		}
+
+		.form-control.textarea {
+			min-height: 150px;
+			resize: vertical;
+		}
+
+		.btn-submit {
+			background: var(--primary-color);
+			color: white;
+			border: none;
+			padding: 1rem 2.5rem;
+			border-radius: 50px;
+			font-weight: 600;
+			font-size: 1.1rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.btn-submit:hover {
+			background: var(--secondary-color);
+			transform: translateY(-2px);
+			box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+		}
+
+		.offices-section {
+			padding: 100px 0;
+			background: white;
+		}
+
+		.office-card {
+			text-align: center;
+			padding: 2rem;
+			border-radius: 16px;
+			transition: transform 0.3s ease;
+			border: 1px solid var(--border-color);
+			height: 100%;
+		}
+
+		.office-card:hover {
+			transform: translateY(-5px);
+			border-color: var(--primary-color);
+			box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+		}
+
+		.office-icon {
+			width: 80px;
+			height: 80px;
+			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 1.5rem;
+		}
+
+		.office-icon i {
+			font-size: 2rem;
+			color: white;
+		}
+
+		.office-title {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--dark-color);
+			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
+		}
+
+		.office-address {
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		.map-section {
+			height: 400px;
+			background: linear-gradient(135deg, var(--border-color) 0%, #cbd5e1 100%);
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.map-placeholder {
+			text-align: center;
+			color: var(--text-color);
+		}
+
+		.map-placeholder i {
+			font-size: 4rem;
+			margin-bottom: 1rem;
+			color: var(--primary-color);
+		}
+
+		@media (max-width: 768px) {
+			.contact-card {
+				padding: 2rem;
+			}
+			
+			.contact-main {
+				padding: 60px 0;
+			}
+			
+			.offices-section {
+				padding: 60px 0;
+			}
+
+			.section-title {
+				font-size: 2rem;
+			}
+
+			.contact-info-item {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.contact-icon {
+				margin: 0 auto 1rem;
+			}
+		}
+	</style>
+</head>
+
+<body class="contact-page">
+
+	<a href="#main_content" data-type="section-switch" class="return-to-top">
+		<i class="fa fa-chevron-up"></i>
+	</a>
+
+	<div class="page-loader">
+		<div class="page-loading-wrapper">
+			<div class="loading loading07">
+				<span data-text="A">A</span>
+				<span data-text="S">S</span>
+				<span data-text="T">T</span>
+				<span data-text="R">R</span>
+				<span data-text="I">I</span>
+				<span data-text="O">O</span>
+				<span data-text="L">L</span>
+			</div>
+		</div>
+	</div>
+
+	<div id="main_content" class="main-content">
+
+		<!--=========================-->
+		<!--=        Navbar         =-->
+		<!--=========================-->
+		<header class="site-header header-light header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
+			<div class="container">
+				<div class="header-inner">
+					<nav id="site-navigation" class="main-nav">
+						<div class="site-logo">
+							<a href="index.html" class="logo">
+								<img src="assets/img/logo-sticky.png" alt="Astriol Logo" class="main-logo">
+								<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
+							</a>
+						</div>
+
+						<div class="menu-wrapper main-nav-container canvas-menu-wrapper" id="mega-menu-wrap">
+							<div class="canvas-header">
+								<div class="mobile-offcanvas-logo">
+									<a href="index.html">
+										<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
+									</a>
+								</div>
+								<div class="close-menu" id="page-close-main-menu">
+									<i class="ti-close"></i>
+								</div>
+							</div>
+
+							<ul class="astriol-main-menu">
+								<li class="has-submenu menu-item-depth-0">
+									<a href="index.html">Home</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Home 1</a></li>
+										<li><a href="index-v2.html">Home 2</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">About</a></li>
+								<li class="current-menu-item"><a href="contact.html">Contact</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="portfolio.html">Portfolio</a></li>
+								<li class="has-submenu menu-item-depth-0">
+									<a href="#">Dashboard</a>
+									<ul class="sub-menu">
+										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+										<li><a href="user-dashboard.html">User Dashboard</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="nav-right">
+							<a href="login.html" class="gp-btn btn-outline btn-round">Change for Free</a>
+							<div class="astriol-burger-menu" id="mobile-menu-open">
+								<span class="bar-one"></span>
+								<span class="bar-two"></span>
+								<span class="bar-three"></span>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!--==========================-->
+		<!--=         Banner         =-->
+		<!--==========================-->
+		<section class="page-banner">
+			<div class="page-title-wrapper text-center">
+				<h1 class="page-title">Contact</h1>
+
+				<ul class="breadcrumbs">
+					<li><a href="index.html">Home</a></li>
+					<li>Contact</li>
+				</ul>
+			</div>
+			<!-- /.page-title-wrapper -->
+
+			<ul class="banner-pertical">
+				<li><img src="media/banner/header/crose.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/box.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/dot.png" alt="astriol pertical"></li>
+				<li><img src="media/banner/header/dot_sm.png" data-parallax='{"y": 100}' alt="astriol pertical"></li>
+				<li><img src="media/banner/header/line.png" data-parallax='{"y": 50, "x": 100}' alt="astriol pertical"></li>
+				<li data-parallax='{"y": -100}'></li>
+				<li></li>
+			</ul>
+			<!-- /.banner-pertical -->
+		</section>
+		<!-- /.page-banner -->
+
+		<!--================================-->
+		<!--=         Contact Form         =-->
+		<!--================================-->
+		<section class="contact-main">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="contact-card wow fadeInUp">
+							<h2 class="section-title">Let's Start Your Project</h2>
+							<p class="section-subtitle">
+								Ready to bring your vision to life? Fill out the form below and we'll get back to you within 24 hours. Let's discuss your project and how we can help you achieve your goals.
+							</p>
+
+							<form action="php/mailer.php" class="contact-form" data-gp-form="contact-form">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="form-label">Full Name *</label>
+											<input type="text" name="fname" class="form-control" placeholder="Enter your full name" required>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="form-label">Email Address *</label>
+											<input type="email" name="email" class="form-control" placeholder="Enter your email address" required>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="form-label">Phone Number</label>
+											<input type="tel" name="phone" class="form-control" placeholder="Enter your phone number">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="form-label">Company</label>
+											<input type="text" name="company" class="form-control" placeholder="Your company name">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<label class="form-label">Project Type</label>
+											<select name="project_type" class="form-control">
+												<option value="">Select a service</option>
+												<option value="web-design">Web Design</option>
+												<option value="mobile-app">Mobile App Development</option>
+												<option value="branding">Branding & Identity</option>
+												<option value="ui-ux">UI/UX Design</option>
+												<option value="ecommerce">E-commerce Solutions</option>
+												<option value="consulting">Digital Consulting</option>
+												<option value="other">Other</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<label class="form-label">Project Details *</label>
+											<textarea name="message" class="form-control textarea" rows="6" placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required></textarea>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<button type="submit" class="btn-submit">
+											<i class="fas fa-paper-plane"></i>
+											Send Message
+										</button>
+										<div class="form-result alert" style="display: none;">
+											<div class="content"></div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="contact-card contact-info-card wow fadeInUp" data-wow-delay="0.2s">
+							<h3 class="section-title" style="color: white;">Get in Touch</h3>
+							<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
+								Ready to discuss your project? Here's how you can reach us.
+							</p>
+
+							<div class="contact-info-item">
+								<div class="contact-icon">
+									<i class="fas fa-map-marker-alt"></i>
+								</div>
+								<div class="contact-details">
+									<h4>Visit Our Office</h4>
+									<p>123 Business Street<br>Tech City, TC 12345<br>United States</p>
+								</div>
+							</div>
+
+							<div class="contact-info-item">
+								<div class="contact-icon">
+									<i class="fas fa-phone"></i>
+								</div>
+								<div class="contact-details">
+									<h4>Call Us</h4>
+									<p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+									<p style="font-size: 0.9rem; opacity: 0.8;">Mon - Fri, 9:00 AM - 6:00 PM</p>
+								</div>
+							</div>
+
+							<div class="contact-info-item">
+								<div class="contact-icon">
+									<i class="fas fa-envelope"></i>
+								</div>
+								<div class="contact-details">
+									<h4>Email Us</h4>
+									<p><a href="mailto:hello@astriol.com">hello@astriol.com</a></p>
+									<p><a href="mailto:support@astriol.com">support@astriol.com</a></p>
+								</div>
+							</div>
+
+							<div class="contact-info-item">
+								<div class="contact-icon">
+									<i class="fas fa-clock"></i>
+								</div>
+								<div class="contact-details">
+									<h4>Response Time</h4>
+									<p>We typically respond within 2-4 hours during business days.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--==========================-->
+		<!--=       Office Locations =-->
+		<!--==========================-->
+		<section class="offices-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 mx-auto text-center">
+						<h2 class="section-title wow fadeInUp">Our Global Presence</h2>
+						<p class="section-subtitle wow fadeInUp" data-wow-delay="0.2s">
+							With offices around the world, we're always close to our clients and ready to provide personalized service and support.
+						</p>
+					</div>
+				</div>
+
+				<div class="row mt-5">
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="office-card wow fadeInUp">
+							<div class="office-icon">
+								<i class="fas fa-building"></i>
+							</div>
+							<h3 class="office-title">New York</h3>
+							<p class="office-address">
+								123 Business Avenue<br>
+								New York, NY 10001<br>
+								United States<br><br>
+								<strong>Phone:</strong> +1 (555) 123-4567<br>
+								<strong>Email:</strong> ny@astriol.com
+							</p>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="office-card wow fadeInUp" data-wow-delay="0.2s">
+							<div class="office-icon">
+								<i class="fas fa-landmark"></i>
+							</div>
+							<h3 class="office-title">London</h3>
+							<p class="office-address">
+								456 Innovation Street<br>
+								London SW1A 1AA<br>
+								United Kingdom<br><br>
+								<strong>Phone:</strong> +44 20 7123 4567<br>
+								<strong>Email:</strong> london@astriol.com
+							</p>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 mb-4">
+						<div class="office-card wow fadeInUp" data-wow-delay="0.4s">
+							<div class="office-icon">
+								<i class="fas fa-city"></i>
+							</div>
+							<h3 class="office-title">Sydney</h3>
+							<p class="office-address">
+								789 Tech Boulevard<br>
+								Sydney NSW 2000<br>
+								Australia<br><br>
+								<strong>Phone:</strong> +61 2 9123 4567<br>
+								<strong>Email:</strong> sydney@astriol.com
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--==============================-->
+		<!--=         Map Section        =-->
+		<!--==============================-->
+		<section class="map-section">
+			<div class="map-placeholder">
+				<i class="fas fa-map-marked-alt"></i>
+				<h3>Interactive Map</h3>
+				<p>Google Maps integration would be displayed here</p>
+			</div>
+		</section>
+
+		<!--=========================-->
+		<!--=        Footer         =-->
+		<!--=========================-->
+		<footer class="site-footer" id="footer-saas-two">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="widget footer-widget widget-about">
+							<div class="footer-logo">
+								<img src="assets/img/logo-saas-light.png" alt="Astriol Logo">
+							</div>
+							<p class="widget-description">
+								Creating innovative digital solutions that transform businesses and deliver exceptional user experiences.
+							</p>
+							<div class="copyright-text">
+								<p>Copyright © 2025 Astriol by <a href="http://gptheme.com">GpTheme</a>. All Rights Reserved</p>
+							</div>
+							<ul class="footer-social-link">
+								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Services</h3>
+							<ul class="footer-menu">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">Mobile Apps</a></li>
+								<li><a href="#">UI/UX Design</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">E-commerce</a></li>
+								<li><a href="#">Consulting</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Quick Links</h3>
+							<ul class="footer-menu">
+								<li><a href="about.html">About Astriol</a></li>
+								<li><a href="portfolio.html">Our Portfolio</a></li>
+								<li><a href="pricing.html">Pricing Plans</a></li>
+								<li><a href="blog.html">Latest News</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="#">Career Opportunities</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Contact Info</h3>
+							<div class="contact-info">
+								<p><i class="fas fa-map-marker-alt"></i> 123 Business Street, Tech City, TC 12345</p>
+								<p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+								<p><i class="fas fa-envelope"></i> hello@astriol.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom-shape">
+				<div class="three-left">
+					<img src="media/footer/tree_left.png" alt="Decorative tree">
+				</div>
+				<div class="three-right">
+					<img src="media/footer/tree_right.png" alt="Decorative tree">
+				</div>
+				<div class="container">
+					<div class="footer-center-victor">
+						<div class="foo-shape-one">
+							<img src="media/footer/man-female1.png" alt="Team member">
+						</div>
+						<div class="foo-shape-two">
+							<img src="media/footer/man1.png" alt="Team member">
+						</div>
+						<div class="foo-shape-three">
+							<img src="media/footer/man-female2.png" alt="Team member">
+						</div>
+						<div class="foo-shape-four">
+							<img src="media/footer/man2.png" alt="Team member">
+						</div>
+						<div class="foo-shape-five">
+							<img src="media/footer/vase.png" alt="Decorative vase">
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Dependency Scripts -->
+	<script src="dependencies/jquery/jquery.min.js"></script>
+	<script src="dependencies/popper.js/popper.min.js"></script>
+	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+	<script src="dependencies/wow/js/wow.min.js"></script>
+
+	<!-- Site Scripts -->
+	<script src="assets/js/header.js"></script>
+	<script src="assets/js/app.js"></script>
+
+	<!-- Initialize Animations -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Initialize WOW animations
+			
+		});
+	</script>
+
+</body>
+</html>

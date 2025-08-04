@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin Dashboard - Astriol</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
+
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
+
+</head>
+
+<body id="admin-dashboard" class="dashboard-page" data-style="default">
+
+	<a href="#main_content" data-type="section-switch" class="return-to-top">
+		<i class="fa fa-chevron-up"></i>
+	</a>
+
+	<div id="main_content" class="main-content">
+
+		<!--=========================-->
+		<!--=        Navbar         =-->
+		<!--=========================-->
+		<header class="site-header header-sass header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
+			<div class="container">
+				<div class="header-inner">
+
+					<nav id="site-navigation" class="main-nav">
+
+						<div class="site-logo">
+							<a href="index.html" class="logo">
+								<img src="assets/img/logo-saas.png" alt="site logo" class="main-logo">
+								<img src="assets/img/logo-saas.png" alt="site logo" class="logo-sticky">
+							</a>
+						</div>
+
+						<div class="menu-wrapper main-nav-container canvas-menu-wrapper" id="mega-menu-wrap">
+							<div class="canvas-header">
+								<div class="mobile-offcanvas-logo">
+									<a href="index.html">
+										<img src="assets/img/logo-saas.png" alt="site logo" class="logo-sticky">
+									</a>
+								</div>
+
+								<div class="close-menu" id="page-close-main-menu">
+									<i class="ti-close"></i>
+								</div>
+							</div>
+
+							<ul class="astriol-main-menu">
+								<li class="has-submenu menu-item-depth-0">
+									<a href="index.html">Home</a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Home 1</a></li>
+										<li><a href="index-v2.html">Home 2</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="contact.html">Contact</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="portfolio.html">Portfolio</a></li>
+								<li class="has-submenu menu-item-depth-0">
+									<a href="#">Dashboard</a>
+									<ul class="sub-menu">
+										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+										<li><a href="user-dashboard.html">User Dashboard</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="nav-right">
+							<a href="login.html" class="nav-btn gp-btn color-two btn-circle">Logout</a>
+
+							<div class="astriol-burger-menu" id="mobile-menu-open">
+								<span class="bar-one"></span>
+								<span class="bar-two"></span>
+								<span class="bar-three"></span>
+							</div>
+						</div>
+
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!--==========================-->
+		<!--=     Admin Dashboard    =-->
+		<!--==========================-->
+		<section class="dashboard-section">
+			<div class="container">
+				<div class="dashboard-wrapper">
+					<div class="dashboard-header">
+						<h1 class="dashboard-title">Admin Dashboard</h1>
+						<p class="dashboard-subtitle">Manage your application and users</p>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dashboard-card">
+								<div class="card-icon">
+									<i class="fas fa-users"></i>
+								</div>
+								<div class="card-content">
+									<h3 class="card-title">Total Users</h3>
+									<p class="card-number">1,234</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dashboard-card">
+								<div class="card-icon">
+									<i class="fas fa-chart-line"></i>
+								</div>
+								<div class="card-content">
+									<h3 class="card-title">Revenue</h3>
+									<p class="card-number">$12,345</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dashboard-card">
+								<div class="card-icon">
+									<i class="fas fa-shopping-cart"></i>
+								</div>
+								<div class="card-content">
+									<h3 class="card-title">Orders</h3>
+									<p class="card-number">567</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="dashboard-card">
+								<div class="card-icon">
+									<i class="fas fa-star"></i>
+								</div>
+								<div class="card-content">
+									<h3 class="card-title">Reviews</h3>
+									<p class="card-number">4.8</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="dashboard-content">
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="dashboard-panel">
+									<h3 class="panel-title">Recent Activity</h3>
+									<div class="activity-list">
+										<div class="activity-item">
+											<div class="activity-icon">
+												<i class="fas fa-user-plus"></i>
+											</div>
+											<div class="activity-content">
+												<h4>New user registered</h4>
+												<p>John Doe joined the platform</p>
+												<span class="activity-time">2 hours ago</span>
+											</div>
+										</div>
+										<div class="activity-item">
+											<div class="activity-icon">
+												<i class="fas fa-dollar-sign"></i>
+											</div>
+											<div class="activity-content">
+												<h4>Payment received</h4>
+												<p>$299 payment from subscription</p>
+												<span class="activity-time">4 hours ago</span>
+											</div>
+										</div>
+										<div class="activity-item">
+											<div class="activity-icon">
+												<i class="fas fa-cog"></i>
+											</div>
+											<div class="activity-content">
+												<h4>System updated</h4>
+												<p>Platform updated to version 2.1</p>
+												<span class="activity-time">1 day ago</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4">
+								<div class="dashboard-panel">
+									<h3 class="panel-title">Quick Actions</h3>
+									<div class="quick-actions">
+										<a href="#" class="action-btn">Add New User</a>
+										<a href="#" class="action-btn">View Reports</a>
+										<a href="#" class="action-btn">Manage Settings</a>
+										<a href="#" class="action-btn">Send Newsletter</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--=========================-->
+		<!--=        Footer         =-->
+		<!--=========================-->
+		<footer id="footer-main" class="gp-site-footer">
+			<div class="container">
+				<div class="site-info">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<div class="copyright">
+								<p class="copyright-text">Copyright © 2020 Astriol by <a href="https://gptheme.com">GpTheme</a>. All Rights Reserved</p>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="footer-social-wrapper">
+								<ul class="footer-social-link">
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Dependency Scripts -->
+	<script src="dependencies/jquery/jquery.min.js"></script>
+	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+
+	<!-- Site Scripts -->
+	<script src="assets/js/header.js"></script>
+	<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
