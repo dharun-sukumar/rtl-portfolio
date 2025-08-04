@@ -6,7 +6,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home Saas - Multipurpose Saas Landing Page</title>
+	<title>Professional Business Solutions - Astriol Creative Agency</title>
+	<meta name="description" content="Transform your business with Astriol's professional creative solutions. Expert web design, digital marketing, and innovative business strategies.">
+	<meta name="keywords" content="business solutions, web design, digital marketing, creative agency, professional services">
 
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
@@ -34,6 +36,327 @@
 
 	<!-- RTL Support Styles -->
 	<style>
+		/* Professional Theme Integration */
+		:root {
+			--primary-color: #2563eb;
+			--primary-light: #3b82f6;
+			--primary-dark: #1e40af;
+			--secondary-color: #1e40af;
+			--accent-color: #0ea5e9;
+			--dark-color: #0f172a;
+			--light-color: #f8fafc;
+			--text-color: #475569;
+			--border-color: #e2e8f0;
+			--success-color: #059669;
+			--gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+			--shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			--shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+			--shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Enhanced Professional Styling */
+		.banner-main {
+			background: var(--gradient-primary);
+			color: white;
+			position: relative;
+			overflow: hidden;
+			padding: 120px 0 100px;
+		}
+
+		.banner-main::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('media/banner/banner-bg.jpg') center/cover;
+			opacity: 0.1;
+		}
+
+		.banner-main .container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.banner-title {
+			color: white;
+			font-weight: 700;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			margin-bottom: 1.5rem;
+		}
+
+		.banner-content .description {
+			color: rgba(255, 255, 255, 0.85);
+			font-size: 1.125rem;
+			margin-bottom: 2.5rem;
+		}
+
+		.banner-button-container {
+			gap: 1rem;
+		}
+
+		.banner-button-container .gp-btn {
+			padding: 1rem 2rem;
+			font-weight: 600;
+			border-radius: 50px;
+			box-shadow: var(--shadow-md);
+		}
+
+		/* Service boxes with professional styling */
+		.service-one {
+			background: var(--light-color);
+			padding: 7rem 0;
+		}
+
+		.service-one .section-heading {
+			margin-bottom: 4rem;
+		}
+
+		.icon-box {
+			background: white;
+			border-radius: 16px;
+			padding: 3rem 2.5rem;
+			box-shadow: var(--shadow-md);
+			transition: all 0.3s ease;
+			border: 1px solid var(--border-color);
+			height: 100%;
+			margin-bottom: 2rem;
+		}
+
+		.icon-box:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		.icon-container {
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 1.5rem;
+		}
+
+		.icon-container i {
+			font-size: 2rem;
+			color: white;
+		}
+
+		.icon-container.color-one { background: var(--primary-color); }
+		.icon-container.color-two { background: var(--accent-color); }
+		.icon-container.color-three { background: var(--success-color); }
+		.icon-container.color-four { background: var(--primary-dark); }
+		.icon-container.color-five { background: #d97706; }
+		.icon-container.color-six { background: #dc2626; }
+
+		.box-title {
+			color: var(--dark-color);
+			font-weight: 600;
+			margin-bottom: 1rem;
+		}
+
+		.box-content p {
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		/* Button styling consistency */
+		.gp-btn.btn-outline {
+			border: 2px solid var(--primary-color);
+			color: var(--primary-color);
+			background: transparent;
+			transition: all 0.3s ease;
+			font-weight: 600;
+			padding: 0.75rem 2rem;
+		}
+
+		.gp-btn.btn-outline:hover {
+			background: var(--primary-color);
+			color: white;
+			transform: none;
+			box-shadow: var(--shadow-md);
+		}
+
+		/* Enhanced section styling */
+		.client-logo-marque {
+			background: white;
+			border-top: 1px solid var(--border-color);
+			border-bottom: 1px solid var(--border-color);
+			padding: 4rem 0;
+		}
+
+		.dashboard-preview {
+			background: var(--light-color);
+			padding: 7rem 0;
+		}
+
+		.image-content {
+			padding: 7rem 0;
+		}
+
+		.testimonials-creative {
+			background: white;
+			padding: 7rem 0;
+		}
+
+		.call-to-action-creative {
+			background: var(--gradient-primary);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.call-to-action-creative::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('media/banner/banner-bg.jpg') center/cover;
+			opacity: 0.1;
+		}
+
+		.call-to-action-creative .call-to-action-wrapper {
+			position: relative;
+			z-index: 2;
+		}
+
+		.call-to-action-creative .title {
+			color: white;
+			font-weight: 700;
+		}
+
+		.call-to-action-creative .description {
+			color: rgba(255, 255, 255, 0.85);
+		}
+
+		/* Blog section */
+		#blog-grid-one {
+			padding: 7rem 0;
+			background: var(--light-color);
+		}
+
+		/* Footer improvements */
+		.gp-site-footer {
+			background: var(--dark-color);
+			color: white;
+		}
+
+		.footer-widgets {
+			padding: 4rem 0 2rem;
+		}
+
+		.widget-title {
+			color: white;
+			font-weight: 600;
+			margin-bottom: 1.5rem;
+		}
+
+		.footer-menu li a {
+			color: rgba(255, 255, 255, 0.8);
+			transition: color 0.3s ease;
+		}
+
+		.footer-menu li a:hover {
+			color: var(--accent-color);
+		}
+
+		.newsletter-submit.btn-outline {
+			border-color: white;
+			color: white;
+		}
+
+		.newsletter-submit.btn-outline:hover {
+			background: white;
+			color: var(--primary-color);
+		}
+
+		/* Responsive improvements */
+		@media (max-width: 768px) {
+			.banner-main {
+				padding: 100px 0 80px;
+			}
+
+			.banner-title {
+				font-size: 2.5rem;
+				line-height: 1.2;
+			}
+
+			.banner-button-container {
+				flex-direction: column;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.banner-button-container .gp-btn {
+				width: 100%;
+				max-width: 280px;
+			}
+
+			.service-one,
+			.dashboard-preview,
+			.image-content,
+			.testimonials-creative,
+			#blog-grid-one {
+				padding: 4rem 0;
+			}
+
+			.icon-box {
+				padding: 2rem 1.5rem;
+				margin-bottom: 2rem;
+			}
+
+			.section-heading .section-title {
+				font-size: 2rem;
+				line-height: 1.3;
+			}
+		}
+
+		/* Animation improvements */
+		.banner-promo-mockup {
+			animation: float 6s ease-in-out infinite;
+		}
+
+		@keyframes float {
+			0%, 100% { transform: translateY(0px); }
+			50% { transform: translateY(-20px); }
+		}
+
+		.icon-box {
+			animation: fadeInUp 0.6s ease forwards;
+			opacity: 0;
+			transform: translateY(30px);
+		}
+
+		.icon-box:nth-child(1) { animation-delay: 0.1s; }
+		.icon-box:nth-child(2) { animation-delay: 0.2s; }
+		.icon-box:nth-child(3) { animation-delay: 0.3s; }
+		.icon-box:nth-child(4) { animation-delay: 0.4s; }
+		.icon-box:nth-child(5) { animation-delay: 0.5s; }
+		.icon-box:nth-child(6) { animation-delay: 0.6s; }
+
+		@keyframes fadeInUp {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Enhanced typography */
+		.section-title {
+			font-weight: 700;
+			color: var(--dark-color);
+		}
+
+		.section-heading .description {
+			color: var(--text-color);
+			font-size: 1.125rem;
+			line-height: 1.6;
+		}
+
+		/* RTL Support */
 		[dir="rtl"] {
 			text-align: right;
 		}
@@ -105,7 +428,7 @@
 		<!--=========================-->
 		<!--=        Navbar         =-->
 		<!--=========================-->
-		<header class="site-header header-sass header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
+		<header class="site-header header-light header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
 			<div class="container">
 				<div class="header-inner">
 
@@ -113,8 +436,8 @@
 
 						<div class="site-logo">
 							<a href="index.html" class="logo">
-								<img src="assets/img/logo-saas.png" alt="site logo" class="main-logo">
-								<img src="assets/img/logo-saas.png" alt="site logo" class="logo-sticky">
+								<img src="assets/img/logo-sticky.png" alt="site logo" class="main-logo">
+								<img src="assets/img/logo-community.png" alt="site logo" class="logo-sticky">
 							</a>
 						</div>
 						<!-- /.site-logo -->
@@ -123,7 +446,7 @@
 							<div class="canvas-header">
 								<div class="mobile-offcanvas-logo">
 									<a href="index.html">
-										<img src="assets/img/logo-saas.png" alt="site logo" class="logo-sticky">
+										<img src="assets/img/logo-community.png" alt="site logo" class="logo-sticky">
 									</a>
 								</div>
 
@@ -158,7 +481,7 @@
 						<!-- /.menu-wrapper -->
 
 						<div class="nav-right">
-							<a href="login.html" class="nav-btn gp-btn color-two btn-circle">Try for Free</a>
+							<a href="login.html" class="gp-btn btn-outline btn-round">Try for Free</a>
 							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px;">RTL</button>
 
 							<div class="astriol-burger-menu" id="mobile-menu-open">
@@ -189,8 +512,8 @@
 						<p class="description">For everyone, from beginners to experts</p>
 
 						<div class="banner-button-container">
-							<a href="login.html" class="gp-btn banner-btn btn-circle color-two">Try For Free</a>
-							<a href="contact.html" class="gp-btn banner-btn btn-circle color-two btn-light ml-3">Discover More</a>
+							<a href="login.html" class="gp-btn banner-btn btn-outline btn-round">Try For Free</a>
+							<a href="contact.html" class="gp-btn banner-btn btn-outline btn-round ml-3">Discover More</a>
 						</div>
 						<!-- /.banner-button-container -->
 					</div>
@@ -611,7 +934,7 @@
 								happy days the zonked brilliant daft super gutted mate the wireless boot hanky panky.!
 							</p>
 
-							<a href="login.html" class="gp-btn btn-circle color-two 0.7s">Try for Free</a>
+							<a href="login.html" class="gp-btn btn-outline btn-round">Try for Free</a>
 						</div>
 						<!-- /.image-content-wrapper -->
 					</div>
@@ -938,7 +1261,7 @@
 										Daft well fanny around lavatory morish spend a penny gutted mate.
 									</p>
 
-									<a href="contact.html" class="gp-btn color-two btn-light btn-circle">Get Started</a>
+									<a href="contact.html" class="gp-btn btn-outline btn-round">Get Started</a>
 								</div>
 								<!-- /.action-content-wrapper -->
 							</div>
@@ -977,11 +1300,9 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-6 col-sm-6">
 							<div class="widget footer-widget widget-newsletter">
-								<div class="footer-logo">
-									<img src="assets/img/logo-saas.png" alt="site-logo">
-								</div>
-
-								<p>
+							<div class="footer-logo">
+								<img src="assets/img/logo-saas-light.png" alt="site-logo">
+							</div>								<p>
 									Feel free to get in touch<br>
 									with us vai email.
 								</p>
@@ -991,7 +1312,7 @@
 
 									<div class="newsletter-inner">
 										<input type="email" name="email" class="form-control" id="newsletter-form-email" placeholder="Your Email" required="">
-										<button type="submit" name="submit" id="newsletter-submit" class="newsletter-submit color-two gp-btn btn-circle">
+										<button type="submit" name="submit" id="newsletter-submit" class="newsletter-submit gp-btn btn-outline btn-round">
 											<span class="btn-text">Subscribe</span>
 											<i class="fa fa-circle-o-notch"></i>
 										</button>
