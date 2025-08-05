@@ -3331,6 +3331,24 @@ Creation date: 24/08/2018 05:51
 		display: none;
 	}
 }
+
+/* Hide hamburger menu on desktop screens */  
+@media (min-width: 993px) {
+	.site-header .astriol-burger-menu,
+	.mobile-header .astriol-burger-menu,
+	#mobile-menu-open {
+		display: none !important;
+	}
+}
+
+/* Show hamburger menu on mobile screens */
+@media (max-width: 992px) {
+	.site-header .astriol-burger-menu,
+	.mobile-header .astriol-burger-menu,
+	#mobile-menu-open {
+		display: inline-block !important;
+	}
+}
 .site-header .tt-hamburger:focus {
 	outline: 0;
 }

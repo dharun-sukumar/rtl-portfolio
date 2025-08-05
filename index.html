@@ -481,6 +481,24 @@
 		#mobile-menu-open .bar-three {
 			background: #fff !important;
 		}
+
+		/* Hide hamburger menu on desktop screens */  
+		@media (min-width: 993px) {
+			.site-header .astriol-burger-menu,
+			.mobile-header .astriol-burger-menu,
+			#mobile-menu-open {
+				display: none !important;
+			}
+		}
+
+		/* Show hamburger menu on mobile screens */
+		@media (max-width: 992px) {
+			.site-header .astriol-burger-menu,
+			.mobile-header .astriol-burger-menu,
+			#mobile-menu-open {
+				display: inline-block !important;
+			}
+		}
 	</style>
 
 </head>
