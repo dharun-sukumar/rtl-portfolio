@@ -36,6 +36,11 @@
 
 	<!-- RTL Support Styles -->
 	<style>
+		/* Global Font Family */
+		* {
+			font-family: 'Poppins', sans-serif !important;
+		}
+
 		/* Professional Theme Integration */
 		:root {
 			--primary-color: #2563eb;
@@ -47,7 +52,7 @@
 			--light-color: #f8fafc;
 			--text-color: #475569;
 			--border-color: #e2e8f0;
-			--success-color: #059669;
+			--success-color: #2563eb;
 			--gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 			--shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 			--shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -80,15 +85,18 @@
 		}
 
 		.banner-title {
-			color: white;
+			color: white !important;
 			font-weight: 700;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			font-size: 5rem !important;
+			line-height: 1.1;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 			margin-bottom: 1.5rem;
 		}
 
 		.banner-content .description {
-			color: rgba(255, 255, 255, 0.85);
-			font-size: 1.125rem;
+			color: rgba(255, 255, 255, 0.9) !important;
+			font-size: 1.5rem;
+			line-height: 1.4;
 			margin-bottom: 2.5rem;
 		}
 
@@ -97,8 +105,9 @@
 		}
 
 		.banner-button-container .gp-btn {
-			padding: 1rem 2rem;
+			padding: 1.2rem 2.5rem;
 			font-weight: 600;
+			font-size: 1.1rem;
 			border-radius: 50px;
 			box-shadow: var(--shadow-md);
 		}
@@ -280,8 +289,13 @@
 			}
 
 			.banner-title {
-				font-size: 2.5rem;
+				font-size: 3rem;
 				line-height: 1.2;
+			}
+
+			.banner-content .description {
+				font-size: 1.25rem;
+				line-height: 1.4;
 			}
 
 			.banner-button-container {
@@ -293,6 +307,7 @@
 			.banner-button-container .gp-btn {
 				width: 100%;
 				max-width: 280px;
+				font-size: 1rem;
 			}
 
 			.service-one,
@@ -315,10 +330,6 @@
 		}
 
 		/* Animation improvements */
-		.banner-promo-mockup {
-			animation: float 6s ease-in-out infinite;
-		}
-
 		@keyframes float {
 			0%, 100% { transform: translateY(0px); }
 			50% { transform: translateY(-20px); }
@@ -356,14 +367,71 @@
 			line-height: 1.6;
 		}
 
-		/* RTL Support */
+		/* Column spacing */
+		.col-lg-4.col-md-6.col-sm-6 {
+			margin-top: 14px;
+		}
+
+		/* Center align blog author avatars */
+		.blog-post-one .author .avatar {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.blog-post-one .post-author {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.blog-post-one .post-author .avatar {
+			margin-right: 8px;
+			border-radius: 50% !important;
+			width: 40px !important;
+			height: 40px !important;
+			object-fit: cover;
+			border: 2px solid #e2e8f0;
+			background: #f8fafc;
+			padding: 2px;
+		}
+
+		/* Testimonial user avatar styling */
+		.testimonials-creative .user-avatar {
+			position: relative;
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			overflow: hidden;
+			background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+			padding: 2px;
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		}
+
+		.testimonials-creative .user-avatar img {
+			border-radius: 50% !important;
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover;
+			border: none;
+			background: #ffffff;
+			filter: brightness(1.4) contrast(1.2) saturate(1.2) hue-rotate(10deg);
+			transition: all 0.3s ease;
+		}
+
+		.testimonials-creative .user-avatar:hover img {
+			filter: brightness(1.5) contrast(1.3) saturate(1.3);
+			transform: scale(1.05);
+		}		/* RTL Support */
 		[dir="rtl"] {
 			text-align: right;
 		}
 
 		[dir="rtl"] .site-logo {
-			margin-right: 0;
+			margin-right: 10;
 			margin-left: auto;
+			margin-left: 10px;
 		}
 
 		[dir="rtl"] .nav-right {
@@ -397,6 +465,22 @@
 		[dir="rtl"] .copyright-text {
 			text-align: right;
 		}
+
+		/* Global hamburger menu white color override */
+		.site-header .astriol-burger-menu span,
+		.site-header .astriol-burger-menu .bar-one,
+		.site-header .astriol-burger-menu .bar-two,
+		.site-header .astriol-burger-menu .bar-three,
+		.mobile-header .astriol-burger-menu span,
+		.mobile-header .astriol-burger-menu .bar-one,
+		.mobile-header .astriol-burger-menu .bar-two,
+		.mobile-header .astriol-burger-menu .bar-three,
+		#mobile-menu-open .astriol-burger-menu span,
+		#mobile-menu-open .bar-one,
+		#mobile-menu-open .bar-two,
+		#mobile-menu-open .bar-three {
+			background: #fff !important;
+		}
 	</style>
 
 </head>
@@ -424,6 +508,8 @@
 
 	<div id="main_content" class="main-content">
 
+		<!-- Mobile Menu Overlay -->
+		<div class="mask-overlay"></div>
 
 		<!--=========================-->
 		<!--=        Navbar         =-->
@@ -453,7 +539,6 @@
 								<div class="close-menu" id="page-close-main-menu">
 									<i class="ti-close"></i>
 								</div>
-
 							</div>
 
 							<ul class="astriol-main-menu">
@@ -477,12 +562,17 @@
 									</ul>
 								</li>
 							</ul>
+							
+							<div class="mobile-menu-actions">
+								<a href="login.html" class="gp-btn btn-outline btn-round">Try for Free</a>
+								<button id="rtl-toggle-mobile" class="gp-btn btn-outline btn-round">RTL</button>
+							</div>
 						</div>
 						<!-- /.menu-wrapper -->
 
 						<div class="nav-right">
 							<a href="login.html" class="gp-btn btn-outline btn-round">Try for Free</a>
-							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px;">RTL</button>
+							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px; margin-right: 10px;">RTL</button>
 
 							<div class="astriol-burger-menu" id="mobile-menu-open">
 								<span class="bar-one"></span>
@@ -519,9 +609,7 @@
 					</div>
 					<!-- /.banner-content -->
 
-					<div class="banner-promo-mockup">
-						<img src="media/banner/main/mockup.png" alt="Astriol">
-					</div>
+				
 				</div>
 				<!-- /.banner-main-content-wrapper -->
 			</div>
@@ -804,74 +892,6 @@
 		</section>
 		<!-- /#feature -->
 
-		<!--====================================-->
-		<!--=         Dashboard Slider         =-->
-		<!--====================================-->
-		<section class="dashboard-preview" id="slider-tab">
-			<div class="container">
-				<div class="section-heading style-four">
-					<h2 class="section-title">
-						One platform,<br>
-						Many superpowers
-					</h2>
-
-					<p class="description 0.3s">
-						David bevvy my good sir say buggered you mug cuppa hanky panky the want<br>
-						no agro off his nut. Me old mucker u blag smashing.!
-					</p>
-				</div>
-				<div class="preview-slider 0.5s">
-					<div class="row align-items-center">
-						<div class="col-md-4 col-sm-12">
-							<!-- Add Pagination -->
-							<div class="astriol-pagination"></div>
-						</div>
-						<!-- /.col-md-4 col-sm-12 -->
-
-						<div class="col-md-8 col-sm-12">
-							<div class="swiper-container previewSlider">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide color-one" data-image="ei ei-icon_documents_alt" data-title="Export Presets">
-										<div class="slide-image-wrapper">
-											<img src="media/preview-slider/1.png" alt="Export Presets">
-										</div>
-										<!-- /.slide-image-wrapper -->
-									</div>
-									
-									<div class="swiper-slide color-two" data-image="ei ei-icon_piechart" data-title="Analytics Dashboard">
-										<div class="slide-image-wrapper">
-											<img src="media/preview-slider/2.png" alt="Analytics Dashboard">
-										</div>
-										<!-- /.slide-image-wrapper -->
-									</div>
-									
-									<div class="swiper-slide color-three" data-image="ei ei-icon_cloud-upload_alt" data-title="Cloud Integration">
-										<div class="slide-image-wrapper">
-											<img src="media/preview-slider/3.png" alt="Cloud Integration">
-										</div>
-										<!-- /.slide-image-wrapper -->
-									</div>
-									
-									<div class="swiper-slide color-four" data-image="ei ei-icon_search" data-title="Content Search">
-										<div class="slide-image-wrapper">
-											<img src="media/preview-slider/4.png" alt="Content Search">
-										</div>
-										<!-- /.slide-image-wrapper -->
-									</div>
-								</div>
-								<!-- /.swiper-wrapper -->
-							</div>
-							<!-- /.swiper-container -->
-						</div>
-						<!-- /.col-md-8 col-sm-12 -->
-					</div>
-					<!-- /.row -->
-				</div>
-				<!-- /.preview-slider -->
-			</div>
-			<!-- /.container -->
-		</section>
-		<!-- /.dashboard-preview -->
 
 		<!--================================-->
 		<!--=         Image Content        =-->
@@ -1024,7 +1044,7 @@
 											<div class="testmonial-info">
 												<div class="info-wrapper">
 													<div class="user-avatar">
-														<img src="media/testimonial/01.jpg" alt="astriol user-avatar">
+														<img src="https://static.vecteezy.com/system/resources/thumbnails/026/945/935/small/business-man-on-black-background-free-photo.jpg" alt="astriol user-avatar">
 													</div>
 													<!-- /.user-avatar -->
 
@@ -1134,12 +1154,12 @@
 								<div class="entry-content">
 									<div class="author vcard">
 										<a class="post-author" href="blog-single.html">
-											<img alt="" src="media/blog/author.jpg" class="avatar avatar-30 photo" height="30" width="30">
+											<img alt="" src="https://www.swattransport.ae/wp-content/uploads/2024/12/MAN-PAKISTAN-2.jpg" class="avatar avatar-30 photo" height="30" width="30">
 											Mominul Islam
 										</a>
 									</div>
 									<ul class="post-meta">
-										<li class="meta-cat"><a href="blog-single.html">WordPress</a></li>
+										<li class="meta-cat"><a href="blog-single.html">BUSINESS</a></li>
 										<li><i class="ei ei-icon_clock_alt"></i>July 20, 2021</li>
 									</ul>
 
@@ -1167,7 +1187,7 @@
 								<div class="entry-content">
 									<div class="author vcard">
 										<a class="url fn n post-author" href="blog-single.html">
-											<img alt="" src="media/blog/author.jpg" class="avatar avatar-30 photo" height="30" width="30">
+											<img alt="" src="https://www.swattransport.ae/wp-content/uploads/2024/12/MAN-PAKISTAN-2.jpg" class="avatar avatar-30 photo" height="30" width="30">
 											Momin
 										</a>
 									</div>
@@ -1200,7 +1220,7 @@
 								<div class="entry-content">
 									<div class="author vcard">
 										<a class="url fn n post-author" href="blog-single.html">
-											<img alt="" src="media/blog/author.jpg" class="avatar avatar-30 photo" height="30" width="30">
+											<img alt="" src="https://www.swattransport.ae/wp-content/uploads/2024/12/MAN-PAKISTAN-2.jpg" class="avatar avatar-30 photo" height="30" width="30">
 											Momin
 										</a>
 									</div>
@@ -1294,121 +1314,71 @@
 		<!--=========================-->
 		<!--=        Footer         =-->
 		<!--=========================-->
-		<footer id="footer-main" class="gp-site-footer">
+		<footer class="site-footer" id="footer-saas-two">
 			<div class="container">
-				<div class="footer-widgets wow pixFadeUp">
-					<div class="row">
-						<div class="col-lg-4 col-md-6 col-sm-6">
-							<div class="widget footer-widget widget-newsletter">
-							<div class="footer-logo">
-								<img src="assets/img/logo-saas-light.png" alt="site-logo">
-							</div>								<p>
-									Feel free to get in touch<br>
-									with us vai email.
-								</p>
-
-								<form action="php/newsletter.php" method="post" class="footer-newsletter-form wow pixFadeUp" data-gp-form="newsletter-subscribe" style="visibility: visible; animation-name: pixFadeUp;">
-									<input type="hidden" name="action" value="gp_mailchimp_subscribe">
-
-									<div class="newsletter-inner">
-										<input type="email" name="email" class="form-control" id="newsletter-form-email" placeholder="Your Email" required="">
-										<button type="submit" name="submit" id="newsletter-submit" class="newsletter-submit gp-btn btn-outline btn-round">
-											<span class="btn-text">Subscribe</span>
-											<i class="fa fa-circle-o-notch"></i>
-										</button>
-									</div>
-
-									<div class="form-result alert">
-										<div class="content"></div>
-									</div><!-- /.form-result-->
-								</form>
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="widget footer-widget widget-about">
+							<h3 class="widget-title">Astriol</h3>
+							<p class="widget-description">
+								Creating innovative digital solutions that transform businesses and deliver exceptional user experiences.
+							</p>
+							<div class="copyright-text">
+								<p>Copyright © 2025 Astriol by <a href="http://gptheme.com">GpTheme</a>. All Rights Reserved</p>
 							</div>
-							<!-- /.widget footer-widget -->
+							<ul class="footer-social-link">
+								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+							</ul>
 						</div>
-						<!-- /.col-lg-3 col-md-6 col-sm-6 -->
-
-						<div class="col-lg-3 col-md-6 col-sm-6">
-							<div class="widget footer-widget">
-								<h3 class="widget-title">About Us</h3>
-
-								<ul class="footer-menu">
-									<li><a href="testimonial.html">Testimonials</a></li>
-									<li><a href="index.html">Astriol</a></li>
-									<li><a href="#">WordPress Quote Plugin</a></li>
-									<li><a href="contact.html">Contact Us</a></li>
-								</ul>
-
-							</div>
-							<!-- /.widget footer-widget -->
-						</div>
-						<!-- /.col-lg-3 col-md-6 col-sm-6 -->
-
-						<div class="col-lg-3 col-md-6 col-sm-6">
-							<div class="widget footer-widget">
-								<h3 class="widget-title">Solutions</h3>
-
-								<ul class="footer-menu">
-									<li><a href="contact.html">Help Docs</a></li>
-									<li><a href="faq.html">FAQ’s</a></li>
-									<li><a href="#">Video Demos</a></li>
-									<li><a href="contact.html">Join our Facebook Group</a></li>
-									<li><a href="portfolio-three.html">Case Study</a></li>
-									<li><a href="blog.html">Blog</a></li>
-								</ul>
-							</div>
-							<!-- /.widget footer-widget -->
-						</div>
-						<!-- /.col-lg-3 col-md-6 col-sm-6 -->
-
-						<div class="col-lg-2 col-md-6 col-sm-6">
-							<div class="widget footer-widget">
-								<h3 class="widget-title">Resources</h3>
-
-								<ul class="footer-menu">
-									<li><a href="pricing.html">Pricing</a></li>
-									<li><a href="privacy.html">Privacy Policy</a></li>
-									<li><a href="login.html">Login</a></li>
-									<li><a href="contact.html">Support</a></li>
-									<li><a href="service.html">Tour</a></li>
-								</ul>
-							</div>
-							<!-- /.widget footer-widget -->
-						</div>
-						<!-- /.col-lg-3 col-md-6 col-sm-6 -->
 					</div>
-					<!-- /.row -->
-				</div>
-				<!-- /.footer-nner -->
-			</div>
-			<!-- /.container -->
 
-			<div class="site-info">
-				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-md-6">
-							<div class="copyright">
-								<p class="copyright-text">Copyright © 2020 Astriol by <a href="https://gptheme.com">GpTheme</a>. All Rights Reserved</p>
-							</div>
+					<div class="col-lg-2 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Services</h3>
+							<ul class="footer-menu">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">Mobile Apps</a></li>
+								<li><a href="#">UI/UX Design</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">E-commerce</a></li>
+								<li><a href="#">Consulting</a></li>
+							</ul>
 						</div>
-						<!-- /.col-md-6 -->
-
-						<div class="col-md-6">
-							<div class="footer-social-wrapper">
-								<ul class="footer-social-link">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
-							</div>
-							<!-- /.footer-social-wrapper -->
-						</div>
-						<!-- /.col-md-6 -->
 					</div>
-					<!-- /.row -->
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Quick Links</h3>
+							<ul class="footer-menu">
+								<li><a href="about.html">About Astriol</a></li>
+								<li><a href="portfolio.html">Our Portfolio</a></li>
+								<li><a href="pricing.html">Pricing Plans</a></li>
+								<li><a href="blog.html">Latest News</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="#">Career Opportunities</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Contact Info</h3>
+							<div class="contact-info">
+								<p><i class="fas fa-map-marker-alt"></i> 123 Business Street, Tech City, TC 12345</p>
+								<p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+								<p><i class="fas fa-envelope"></i> hello@astriol.com</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- /.container -->
 			</div>
-			<!-- /.site-info -->
+
+			<div class="footer-bottom-shape">
+				<!-- Decorative footer images removed -->
+			</div>
 		</footer>
 		<!-- /#footer -->
 
@@ -1437,39 +1407,11 @@
 	<!-- Site Scripts -->
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/app.js"></script>
+	<script src="assets/js/mobile-menu.js"></script>
 	
 	<!-- Initialize WOW Animations -->
 	<script>
 		
-	</script>
-
-	<!-- RTL Toggle Script -->
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const rtlToggle = document.getElementById('rtl-toggle');
-			if (rtlToggle) {
-				rtlToggle.addEventListener('click', function() {
-					const html = document.documentElement;
-					if (html.getAttribute('dir') === 'rtl') {
-						html.setAttribute('dir', 'ltr');
-						rtlToggle.textContent = 'RTL';
-						localStorage.setItem('astriol-rtl', 'ltr');
-					} else {
-						html.setAttribute('dir', 'rtl');
-						rtlToggle.textContent = 'LTR';
-						localStorage.setItem('astriol-rtl', 'rtl');
-					}
-				});
-				// On load, set dir from localStorage
-				const savedDir = localStorage.getItem('astriol-rtl');
-				if (savedDir === 'rtl') {
-					setTimeout(() => {
-						document.documentElement.setAttribute('dir', 'rtl');
-						rtlToggle.textContent = 'LTR';
-					}, 0);
-				}
-			}
-		});
 	</script>
 
 </body>

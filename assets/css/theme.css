@@ -3,6 +3,9 @@
  * Consistent color scheme and design system
  */
 
+/* Import Google Fonts at the top */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@300;400;500;600;700;800&display=swap');
+
 :root {
 	/* Primary Colors */
 	--primary-color: #2563eb;
@@ -39,9 +42,9 @@
 	--border-medium: #cbd5e1;
 	
 	/* Status Colors */
-	--success-color: #059669;
-	--success-light: #10b981;
-	--success-dark: #047857;
+	--success-color: #2563eb;
+	--success-light: #3b82f6;
+	--success-dark: #1e40af;
 	--warning-color: #d97706;
 	--warning-light: #f59e0b;
 	--warning-dark: #b45309;
@@ -87,9 +90,9 @@
 	--space-2xl: 4rem;
 	
 	/* Typography */
-	--font-primary: 'Poppins', sans-serif;
-	--font-heading: 'Barlow Condensed', sans-serif;
-	--font-mono: 'Monaco', 'Consolas', monospace;
+	--font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+	--font-heading: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+	--font-mono: 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
 	
 	/* Font Sizes */
 	--text-xs: 0.75rem;
@@ -110,6 +113,28 @@
 	--font-semibold: 600;
 	--font-bold: 700;
 	--font-extrabold: 800;
+}
+
+/* Base font styling for better font loading */
+* {
+	font-family: var(--font-primary);
+}
+
+body {
+	font-family: var(--font-primary);
+	font-size: var(--text-base);
+	font-weight: var(--font-normal);
+	line-height: 1.6;
+	color: var(--text-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-heading);
+	font-weight: var(--font-bold);
+	line-height: 1.2;
+	color: var(--text-dark);
 }
 
 /* Professional button styles */
@@ -209,10 +234,170 @@
 	background: var(--light-color);
 }
 
+/* Professional form label styles */
+.form-label {
+	display: block;
+	font-size: var(--text-sm);
+	font-weight: var(--font-medium);
+	color: var(--text-dark);
+	margin-top: var(--space-xs);
+	margin-bottom: 0;
+	font-family: var(--font-primary);
+}
+
+/* Enhanced form control styles */
+.form-control, .form-control-professional {
+	font-family: var(--font-primary) !important;
+	font-size: var(--text-base);
+	font-weight: var(--font-normal);
+	color: var(--text-color) !important;
+	line-height: 1.5;
+}
+
+.form-control::placeholder {
+	color: var(--text-muted) !important;
+	font-family: var(--font-primary) !important;
+	opacity: 1;
+}
+
+/* Select dropdown styling */
+select.form-control, select.form-control-professional {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+	background-position: right 0.75rem center;
+	background-repeat: no-repeat;
+	background-size: 1.25rem 1.25rem;
+	padding-right: 2.5rem;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+select.form-control:focus, select.form-control-professional:focus {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%232563eb' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+}
+
+/* Submit button unified styling */
+.btn-submit, .submit-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-xs);
+	padding: var(--space-md) var(--space-xl);
+	background: var(--gradient-primary);
+	color: white !important;
+	border: none;
+	border-radius: var(--radius-full);
+	font-family: var(--font-primary);
+	font-size: var(--text-base);
+	font-weight: var(--font-semibold);
+	text-decoration: none;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	box-shadow: var(--shadow-md);
+	min-width: 160px;
+}
+
+.btn-submit:hover, .submit-btn:hover {
+	background: var(--gradient-accent);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+	color: white !important;
+}
+
+.btn-submit:focus, .submit-btn:focus {
+	outline: none;
+	box-shadow: var(--shadow-lg), 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Form group styling */
+.form-group {
+	margin-bottom: var(--space-md);
+}
+
+.form-group:last-child {
+	margin-bottom: 0;
+}
+
+/* Textarea specific styling */
+textarea.form-control, textarea.form-control-professional {
+	resize: vertical;
+	min-height: 120px;
+	font-family: var(--font-primary) !important;
+	line-height: 1.6;
+}
+
+/* Contact form specific styles */
+.contact-form .form-control {
+	background: #fafbfc;
+	border: 2px solid var(--border-color);
+	padding: 1rem 1.25rem;
+	border-radius: 12px;
+	font-family: var(--font-primary) !important;
+	font-size: var(--text-base);
+	color: var(--text-color) !important;
+	transition: all var(--transition-base);
+}
+
+.contact-form .form-control:focus {
+	background: white;
+	border-color: var(--primary-color);
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+	outline: none;
+}
+
+/* Ensure text visibility in all form elements */
+input, textarea, select, button {
+	font-family: var(--font-primary) !important;
+	color: var(--text-color) !important;
+}
+
+button {
+	color: white !important;
+}
+
 /* Remove excessive animations */
 * {
 	animation-duration: 0.3s !important;
 	animation-delay: 0s !important;
+}
+
+/* Disable all pulsing animations */
+.pulse,
+[class*="pulse"],
+.fa-pulse,
+*[style*="pulse"],
+*[class*="pixFadeUp"],
+.wow {
+	animation: none !important;
+	-webkit-animation: none !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	transform: none !important;
+}
+
+/* Override specific pulsing keyframes to do nothing */
+@keyframes pulse {
+	0%, 100% { transform: none; opacity: 1; }
+}
+
+@-webkit-keyframes pulse {
+	0%, 100% { -webkit-transform: none; opacity: 1; }
+}
+
+@keyframes pulsesm {
+	0%, 100% { transform: none; opacity: 1; }
+}
+
+@-webkit-keyframes pulsesm {
+	0%, 100% { -webkit-transform: none; opacity: 1; }
+}
+
+@keyframes pixFadeUp {
+	0%, 100% { transform: none; opacity: 1; }
+}
+
+@-webkit-keyframes pixFadeUp {
+	0%, 100% { -webkit-transform: none; opacity: 1; }
 }
 
 /* Disable bouncy animations completely */
@@ -368,4 +553,54 @@
 	background: transparent;
 	border: 2px solid var(--primary-color);
 	color: var(--primary-color);
+}
+
+/* Responsive form improvements */
+@media (max-width: 768px) {
+	.form-control, .form-control-professional {
+		font-size: 16px; /* Prevents zoom on iOS */
+		padding: 0.875rem 1rem;
+	}
+	
+	.btn-submit, .submit-btn {
+		width: 100%;
+		padding: 1rem 1.5rem;
+	}
+	
+	.form-label {
+		font-size: var(--text-xs);
+	}
+}
+
+/* Form validation styles */
+.form-control:invalid:not(:placeholder-shown) {
+	border-color: var(--error-color);
+}
+
+.form-control:valid:not(:placeholder-shown) {
+	border-color: var(--success-color);
+}
+
+/* Loading state for submit button */
+.btn-submit.loading, .submit-btn.loading {
+	opacity: 0.7;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.btn-submit.loading::after, .submit-btn.loading::after {
+	content: '';
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid transparent;
+	border-top: 2px solid white;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	margin-left: 8px;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }

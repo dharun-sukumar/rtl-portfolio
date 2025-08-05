@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Mobile Menu Test</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        
+        /* Mobile Menu Button */
+        #mobile-menu-open {
+            display: block;
+            cursor: pointer;
+            background: red;
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Mobile Menu */
+        .canvas-menu-wrapper {
+            position: fixed;
+            top: 0;
+            left: -350px;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            border: 3px solid blue;
+            z-index: 9999;
+            transition: left 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .canvas-menu-wrapper.open {
+            left: 0;
+        }
+        
+        .close-menu {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            float: right;
+        }
+        
+        .astriol-main-menu {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .astriol-main-menu li {
+            margin: 10px 0;
+        }
+        
+        .astriol-main-menu a {
+            display: block;
+            padding: 10px;
+            background: #f0f0f0;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .mask-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minimal Mobile Menu Test</h1>
+    
+    <button id="mobile-menu-open">CLICK TO OPEN MOBILE MENU</button>
+    
+    <div class="canvas-menu-wrapper">
+        <button class="close-menu">×</button>
+        <div style="clear: both; padding-top: 20px;">
+            <h3>Mobile Menu</h3>
+            <ul class="astriol-main-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Portfolio</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="dependencies/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log('Minimal test ready');
+            console.log('jQuery version:', $.fn.jquery);
+            console.log('Button exists:', $('#mobile-menu-open').length);
+            console.log('Menu exists:', $('.canvas-menu-wrapper').length);
+            
+            $('#mobile-menu-open').on('click', function() {
+                console.log('Button clicked!');
+                var $menu = $('.canvas-menu-wrapper');
+                
+                if ($menu.hasClass('open')) {
+                    console.log('Closing menu');
+                    $menu.removeClass('open');
+                    $('.mask-overlay').remove();
+                } else {
+                    console.log('Opening menu');
+                    $menu.addClass('open');
+                    $('<div class="mask-overlay"></div>').appendTo('body');
+                }
+            });
+            
+            $('.close-menu, .mask-overlay').on('click', function() {
+                console.log('Close clicked');
+                $('.canvas-menu-wrapper').removeClass('open');
+                $('.mask-overlay').remove();
+            });
+            
+            $(document).on('click', '.mask-overlay', function() {
+                console.log('Overlay clicked');
+                $('.canvas-menu-wrapper').removeClass('open');
+                $('.mask-overlay').remove();
+            });
+        });
+    </script>
+</body>
+</html>

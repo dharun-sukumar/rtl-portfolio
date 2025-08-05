@@ -32,6 +32,11 @@
 
 	<!-- RTL Support Styles -->
 	<style>
+		/* Global Font Family */
+		* {
+			font-family: 'Poppins', sans-serif !important;
+		}
+
 		[dir="rtl"] {
 			text-align: right;
 		}
@@ -822,7 +827,7 @@
 										</a>
 									</div>
 									<ul class="post-meta">
-										<li class="meta-cat"><a href="blog-single.html">WordPress</a></li>
+										<li class="meta-cat"><a href="blog-single.html">BUSINESS</a></li>
 										<li><i class="ei ei-icon_clock_alt"></i>July 20, 2021</li>
 									</ul>
 
@@ -1019,7 +1024,7 @@
 								<ul class="footer-menu">
 									<li><a href="testimonial.html">Testimonials</a></li>
 									<li><a href="index.html">Astriol</a></li>
-									<li><a href="#">WordPress Quote Plugin</a></li>
+									<li><a href="#">Business Growth Plugin</a></li>
 									<li><a href="contact.html">Contact Us</a></li>
 								</ul>
 
@@ -1136,6 +1141,49 @@
 					}, 0);
 				}
 			}
+		});
+	</script>
+
+	<!-- MOBILE MENU SCRIPT -->
+	<script>
+		$(document).ready(function() {
+			// Wait for page to fully load
+			setTimeout(function() {
+				// Remove any existing handlers
+				$('#mobile-menu-open').off('click');
+				
+				// Add mobile menu click handler
+				$('#mobile-menu-open').on('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					var $menu = $('.canvas-menu-wrapper');
+					
+					if ($menu.hasClass('open')) {
+						// Close menu
+						$menu.removeClass('open');
+						$('body').removeClass('page-popup-open');
+						$('html').removeClass('no-scroll');
+						$(this).removeClass('active');
+					} else {
+						// Open menu
+						$menu.addClass('open');
+						$('body').addClass('page-popup-open');
+						$('html').addClass('no-scroll');
+						$(this).addClass('active');
+					}
+				});
+				
+				// Close menu when clicking close button
+				$(document).on('click', '#page-close-main-menu', function(e) {
+					e.preventDefault();
+					$('.canvas-menu-wrapper').removeClass('open');
+					$('body').removeClass('page-popup-open');
+					$('html').removeClass('no-scroll');
+					$('#mobile-menu-open').removeClass('active');
+				});
+				
+			}, 500);
 		});
 	</script>
 

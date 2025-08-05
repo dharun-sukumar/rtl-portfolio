@@ -29,6 +29,14 @@
 	<!-- Google Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
 
+	<!-- Global Font Style -->
+	<style>
+		/* Global Font Family */
+		* {
+			font-family: 'Poppins', sans-serif !important;
+		}
+	</style>
+
 </head>
 
 <body id="home-version-1" class="about-page-template" data-style="default">
@@ -399,6 +407,49 @@
 	<!-- Site Scripts -->
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/app.js"></script>
+
+	<!-- MOBILE MENU SCRIPT -->
+	<script>
+		$(document).ready(function() {
+			// Wait for page to fully load
+			setTimeout(function() {
+				// Remove any existing handlers
+				$('#mobile-menu-open').off('click');
+				
+				// Add mobile menu click handler
+				$('#mobile-menu-open').on('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					var $menu = $('.canvas-menu-wrapper');
+					
+					if ($menu.hasClass('open')) {
+						// Close menu
+						$menu.removeClass('open');
+						$('body').removeClass('page-popup-open');
+						$('html').removeClass('no-scroll');
+						$(this).removeClass('active');
+					} else {
+						// Open menu
+						$menu.addClass('open');
+						$('body').addClass('page-popup-open');
+						$('html').addClass('no-scroll');
+						$(this).addClass('active');
+					}
+				});
+				
+				// Close menu when clicking close button
+				$(document).on('click', '#page-close-main-menu', function(e) {
+					e.preventDefault();
+					$('.canvas-menu-wrapper').removeClass('open');
+					$('body').removeClass('page-popup-open');
+					$('html').removeClass('no-scroll');
+					$('#mobile-menu-open').removeClass('active');
+				});
+				
+			}, 500);
+		});
+	</script>
 
 </body>
 

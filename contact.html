@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="dependencies/simple-line-icons/css/simple-line-icons.css" type="text/css">
 	<link rel="stylesheet" href="dependencies/themify-icons/css/themify-icons.css" type="text/css">
 	<link rel="stylesheet" href="dependencies/components-elegant-icons/css/elegant-icons.min.css" type="text/css">
+	<link rel="stylesheet" href="dependencies/wow/css/animate.css" type="text/css">
 
 	<!-- Site Stylesheet -->
 	<link rel="stylesheet" href="assets/css/app.css" type="text/css">
@@ -31,8 +32,118 @@
 	<!-- Google Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800%7CPoppins:300,400,500,600,700,800" rel="stylesheet">
 
-	<!-- Modern Contact Styles -->
+	<!-- Custom Contact Styles -->
 	<style>
+		/* Global Font Family */
+		* {
+			font-family: 'Poppins', sans-serif !important;
+		}
+
+		/* Force RTL toggle button to be visible */
+		#rtl-toggle {
+			display: inline-block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			z-index: 9999 !important;
+			background-color: transparent !important;
+			border: 2px solid #ffffff !important;
+			color: #ffffff !important;
+			padding: 8px 16px !important;
+			border-radius: 25px !important;
+			font-size: 14px !important;
+			cursor: pointer !important;
+			margin-left: 10px !important;
+			margin-right: 10px !important;
+		}
+
+		#rtl-toggle:hover {
+			background-color: #ffffff !important;
+			color: #2563eb !important;
+		}
+
+		.nav-right {
+			display: flex !important;
+			align-items: center !important;
+			gap: 10px !important;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+
+		/* RTL Support Styles */
+		[dir="rtl"] {
+			text-align: right;
+		}
+
+		[dir="rtl"] .site-logo {
+			margin-right: 0;
+			margin-left: auto;
+		}
+
+		[dir="rtl"] .nav-right {
+			float: left;
+		}
+
+		[dir="rtl"] .astriol-main-menu {
+			text-align: right;
+		}
+
+		[dir="rtl"] .breadcrumbs {
+			direction: rtl;
+		}
+
+		[dir="rtl"] .breadcrumbs li:after {
+			content: "";
+		}
+
+		[dir="rtl"] .breadcrumbs li:before {
+			content: "/";
+			margin: 0 5px;
+		}
+
+		[dir="rtl"] .breadcrumbs li:first-child:before {
+			content: "";
+		}
+
+		[dir="rtl"] .contact-form .form-control {
+			text-align: right;
+		}
+
+		[dir="rtl"] .contact-info {
+			text-align: right;
+		}
+
+		[dir="rtl"] .footer-social-link {
+			justify-content: flex-end;
+		}
+
+		[dir="rtl"] .footer-menu {
+			text-align: right;
+		}
+
+		[dir="rtl"] .widget-description {
+			text-align: right;
+		}
+
+		[dir="rtl"] .copyright-text {
+			text-align: right;
+		}
+
+		[dir="rtl"] .contact-information {
+			text-align: right;
+		}
+
+		[dir="rtl"] .address-box {
+			text-align: right;
+		}
+
+		[dir="rtl"] .gp-input {
+			text-align: right;
+		}
+
+		[dir="rtl"] .contact-form-wrapper {
+			text-align: right;
+		}
+
 		:root {
 			--primary-color: #2563eb;
 			--primary-light: #3b82f6;
@@ -40,294 +151,80 @@
 			--secondary-color: #1e40af;
 			--accent-color: #0ea5e9;
 			--dark-color: #0f172a;
+			--dark-light: #1e293b;
 			--light-color: #f8fafc;
 			--text-color: #475569;
 			--border-color: #e2e8f0;
-			--success-color: #059669;
+			--success-color: #2563eb;
+			--warning-color: #d97706;
+			--error-color: #dc2626;
 			--gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-			--shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-			--shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-			--shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 		}
 
 		body {
 			font-family: 'Poppins', sans-serif;
-			line-height: 1.6;
 		}
 
-		/* Modern Hero Section */
-		.page-banner {
+		.contact-hero {
 			background: var(--gradient-primary);
 			color: white;
-			padding: 140px 0 80px;
+			padding: 80px 0 60px;
+			text-align: center;
 			position: relative;
 			overflow: hidden;
 		}
 
-		.page-banner::before {
+		.contact-hero::before {
 			content: '';
 			position: absolute;
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ffffff" opacity="0.1"/></svg>') repeat;
+			background: url('media/banner/banner-bg.jpg') center/cover;
+			opacity: 0.1;
 		}
 
-		.page-title-wrapper {
+		.contact-hero .container {
 			position: relative;
 			z-index: 2;
 		}
 
-		.page-title {
+		.hero-title {
 			font-size: 3.5rem;
 			font-weight: 700;
 			margin-bottom: 1rem;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			font-family: 'Barlow Condensed', sans-serif;
 		}
 
-		.breadcrumbs {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			list-style: none;
-			padding: 0;
-			margin: 0;
-			font-size: 1.1rem;
-		}
-
-		.breadcrumbs li {
-			color: rgba(255, 255, 255, 0.8);
-		}
-
-		.breadcrumbs li a {
-			color: rgba(255, 255, 255, 0.9);
-			text-decoration: none;
-			transition: color 0.3s ease;
-		}
-
-		.breadcrumbs li a:hover {
-			color: white;
-		}
-
-		.breadcrumbs li:not(:last-child)::after {
-			content: '→';
-			margin: 0 1rem;
-			color: rgba(255, 255, 255, 0.6);
-		}
-
-		/* Modern Contact Section */
-		.contact-main {
-			padding: 100px 0;
-			background: white;
-		}
-
-		.contact-container {
-			max-width: 1200px;
+		.hero-subtitle {
+			font-size: 1.25rem;
+			opacity: 0.9;
+			max-width: 600px;
 			margin: 0 auto;
 		}
 
-		.contact-grid {
-			display: grid;
-			grid-template-columns: 1fr 400px;
-			gap: 4rem;
-			align-items: start;
+		.contact-main {
+			padding: 100px 0;
+			background: var(--light-color);
 		}
 
-		@media (max-width: 992px) {
-			.contact-grid {
-				grid-template-columns: 1fr;
-				gap: 3rem;
-			}
-		}
-
-		/* Contact Form Card */
-		.contact-form-card {
+		.contact-card {
 			background: white;
 			border-radius: 20px;
 			padding: 3rem;
-			box-shadow: var(--shadow-md);
-			border: 1px solid var(--border-color);
-		}
-
-		.form-header {
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 			margin-bottom: 2rem;
+			transition: transform 0.3s ease;
 		}
 
-		.form-title {
-			font-size: 2rem;
-			font-weight: 700;
-			color: var(--dark-color);
-			margin-bottom: 0.5rem;
+		.contact-card:hover {
+			transform: translateY(-5px);
 		}
 
-		.form-subtitle {
-			color: var(--text-color);
-			font-size: 1.1rem;
-		}
-
-		/* Form Styling */
-		.form-row {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 1.5rem;
-			margin-bottom: 1.5rem;
-		}
-
-		.form-row.full-width {
-			grid-template-columns: 1fr;
-		}
-
-		@media (max-width: 768px) {
-			.form-row {
-				grid-template-columns: 1fr;
-				gap: 1rem;
-			}
-		}
-
-		.form-group {
-			position: relative;
-		}
-
-		.form-control {
-			width: 100%;
-			padding: 1rem 1.25rem;
-			border: 2px solid var(--border-color);
-			border-radius: 12px;
-			font-size: 1rem;
-			transition: all 0.3s ease;
-			background: #fafbfc;
-			font-family: 'Poppins', sans-serif;
-		}
-
-		.form-control:focus {
-			outline: none;
-			border-color: var(--primary-color);
-			box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-			background: white;
-		}
-
-		.form-control::placeholder {
-			color: #94a3b8;
-		}
-
-		textarea.form-control {
-			min-height: 120px;
-			resize: vertical;
-		}
-
-		/* Submit Button */
-		.submit-btn {
-			background: var(--gradient-primary);
-			color: white;
-			border: none;
-			padding: 1rem 2.5rem;
-			border-radius: 50px;
-			font-size: 1.1rem;
-			font-weight: 600;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			box-shadow: var(--shadow-md);
-			display: inline-flex;
-			align-items: center;
-			gap: 0.5rem;
-		}
-
-		.submit-btn:hover {
-			transform: translateY(-2px);
-			box-shadow: var(--shadow-lg);
-		}
-
-		/* Contact Info Card */
 		.contact-info-card {
-			background: var(--light-color);
-			border-radius: 20px;
-			padding: 2.5rem;
-			height: fit-content;
-			position: sticky;
-			top: 2rem;
-		}
-
-		.info-header {
-			margin-bottom: 2rem;
-		}
-
-		.info-title {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: var(--dark-color);
-			margin-bottom: 0.5rem;
-		}
-
-		.info-subtitle {
-			color: var(--text-color);
-		}
-
-		.contact-info-item {
-			display: flex;
-			align-items: flex-start;
-			margin-bottom: 2rem;
-			padding: 1.5rem;
-			background: white;
-			border-radius: 12px;
-			box-shadow: var(--shadow-sm);
-			transition: all 0.3s ease;
-		}
-
-		.contact-info-item:hover {
-			transform: translateY(-2px);
-			box-shadow: var(--shadow-md);
-		}
-
-		.contact-icon {
-			width: 50px;
-			height: 50px;
-			background: var(--primary-color);
-			border-radius: 12px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-right: 1rem;
-			flex-shrink: 0;
-		}
-
-		.contact-icon i {
-			font-size: 1.25rem;
+			background: linear-gradient(135deg, var(--dark-color) 0%, var(--dark-light) 100%);
 			color: white;
-		}
-
-		.contact-details h4 {
-			font-size: 1.1rem;
-			font-weight: 600;
-			color: var(--dark-color);
-			margin-bottom: 0.25rem;
-		}
-
-		.contact-details p {
-			color: var(--text-color);
-			margin: 0;
-			font-size: 0.95rem;
-		}
-
-		.contact-details a {
-			color: var(--primary-color);
-			text-decoration: none;
-			transition: color 0.3s ease;
-		}
-
-		.contact-details a:hover {
-			color: var(--primary-dark);
-		}
-
-		/* Office Locations */
-		.offices-section {
-			padding: 80px 0;
-			background: var(--light-color);
-		}
-
-		.section-header {
-			text-align: center;
-			margin-bottom: 3rem;
 		}
 
 		.section-title {
@@ -335,40 +232,201 @@
 			font-weight: 700;
 			color: var(--dark-color);
 			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
 		}
 
 		.section-subtitle {
 			color: var(--text-color);
 			font-size: 1.1rem;
-			max-width: 600px;
-			margin: 0 auto;
+			margin-bottom: 3rem;
 		}
 
-		.offices-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 2rem;
-			margin-top: 3rem;
+		.contact-info-item {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 2rem;
+			padding: 1.5rem;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 12px;
+			transition: background 0.3s ease;
+		}
+
+		.contact-info-item:hover {
+			background: rgba(255, 255, 255, 0.15);
+		}
+
+		.contact-icon {
+			width: 60px;
+			height: 60px;
+			background: var(--primary-color);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 1.5rem;
+			flex-shrink: 0;
+		}
+
+		.contact-icon i {
+			font-size: 1.5rem;
+			color: white;
+		}
+
+		.contact-details h4 {
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 0.5rem;
+			color: white;
+		}
+
+		.contact-details p {
+			margin: 0;
+			opacity: 0.9;
+		}
+
+		.contact-details a {
+			color: var(--primary-light);
+			text-decoration: none;
+			transition: opacity 0.3s ease;
+		}
+
+		.contact-details a:hover {
+			opacity: 0.8;
+		}
+
+		.form-group {
+			margin-bottom: 2rem;
+		}
+
+		.form-label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+			color: var(--dark-color);
+		}
+
+		.form-control {
+			width: 100%;
+			padding: 1rem 1.5rem;
+			border: 2px solid var(--border-color);
+			border-radius: 12px;
+			font-size: 1rem;
+			transition: all 0.3s ease;
+			background: white;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.form-control:focus {
+			outline: none;
+			border-color: var(--primary-color);
+			box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+		}
+
+		.form-control.textarea {
+			min-height: 150px;
+			resize: vertical;
+		}
+
+		.btn-submit {
+			background: var(--primary-color);
+			color: white;
+			border: none;
+			padding: 1rem 2.5rem;
+			border-radius: 50px;
+			font-weight: 600;
+			font-size: 1.1rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.btn-submit:hover {
+			background: var(--primary-dark);
+			transform: translateY(-2px);
+			box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+		}
+
+		/* Blue success elements */
+		.form-result.success {
+			background: var(--primary-color);
+			color: white;
+			padding: 1rem;
+			border-radius: 8px;
+			margin-top: 1rem;
+		}
+
+		.contact-details a:hover {
+			color: var(--accent-color) !important;
+		}
+
+		.info-title {
+			color: var(--primary-color);
+			font-weight: 600;
+		}
+
+		.address-title {
+			color: var(--primary-color);
+			font-size: 1.25rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+		}
+
+		/* Override external green styles */
+		.description a {
+			color: var(--primary-color) !important;
+		}
+
+		.description a:hover {
+			color: var(--accent-color) !important;
+		}
+
+		.gp-btn.btn-submit,
+		button.gp-btn.btn-submit,
+		.contact-form-main .gp-btn.btn-submit,
+		.contact-form-wrapper .gp-btn.btn-submit {
+			background: var(--primary-color) !important;
+			background-color: var(--primary-color) !important;
+			border-color: var(--primary-color) !important;
+			color: white !important;
+		}
+
+		.gp-btn.btn-submit:hover,
+		button.gp-btn.btn-submit:hover,
+		.contact-form-main .gp-btn.btn-submit:hover,
+		.contact-form-wrapper .gp-btn.btn-submit:hover {
+			background: var(--primary-dark) !important;
+			background-color: var(--primary-dark) !important;
+			border-color: var(--primary-dark) !important;
+			color: white !important;
+		}
+
+		.address-box.style-border {
+			border-color: var(--primary-color) !important;
+		}
+
+		.offices-section {
+			padding: 100px 0;
+			background: white;
 		}
 
 		.office-card {
-			background: white;
-			border-radius: 16px;
-			padding: 2rem;
 			text-align: center;
-			box-shadow: var(--shadow-sm);
+			padding: 2rem;
+			border-radius: 16px;
+			transition: transform 0.3s ease;
 			border: 1px solid var(--border-color);
-			transition: all 0.3s ease;
 		}
 
 		.office-card:hover {
-			transform: translateY(-4px);
-			box-shadow: var(--shadow-md);
+			transform: translateY(-5px);
+			border-color: var(--primary-color);
 		}
 
 		.office-icon {
-			width: 60px;
-			height: 60px;
+			width: 80px;
+			height: 80px;
 			background: var(--gradient-primary);
 			border-radius: 50%;
 			display: flex;
@@ -378,362 +436,88 @@
 		}
 
 		.office-icon i {
-			font-size: 1.5rem;
+			font-size: 2rem;
 			color: white;
 		}
 
 		.office-title {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 700;
 			color: var(--dark-color);
 			margin-bottom: 1rem;
+			font-family: 'Barlow Condensed', sans-serif;
 		}
 
-		.office-details {
+		.office-address {
 			color: var(--text-color);
 			line-height: 1.6;
 		}
 
-		/* RTL Support */
-		[dir="rtl"] {
-			text-align: right;
+		.map-section {
+			height: 500px;
+			background: var(--border-color);
+			position: relative;
 		}
 
-		[dir="rtl"] .contact-grid {
-			direction: rtl;
+		.faq-section {
+			padding: 100px 0;
+			background: var(--light-color);
 		}
 
-		[dir="rtl"] .contact-icon {
-			margin-left: 1rem;
-			margin-right: 0;
+		.faq-item {
+			background: white;
+			border-radius: 12px;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 		}
 
-		[dir="rtl"] .breadcrumbs {
-			direction: rtl;
+		.faq-question {
+			padding: 1.5rem;
+			cursor: pointer;
+			background: white;
+			border: none;
+			width: 100%;
+			text-align: left;
+			font-weight: 600;
+			color: var(--dark-color);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			transition: background 0.3s ease;
 		}
 
-		[dir="rtl"] .breadcrumbs li:not(:last-child)::after {
-			content: '←';
+		.faq-question:hover {
+			background: var(--light-color);
 		}
 
-		/* Mobile Optimizations */
+		.faq-answer {
+			padding: 0 1.5rem 1.5rem;
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
 		@media (max-width: 768px) {
-			.page-banner {
-				padding: 120px 0 60px;
-			}
-
-			.page-title {
+			.hero-title {
 				font-size: 2.5rem;
 			}
-
+			
+			.contact-card {
+				padding: 2rem;
+			}
+			
 			.contact-main {
 				padding: 60px 0;
 			}
-
-			.contact-form-card {
-				padding: 2rem;
-			}
-
-			.contact-info-card {
-				position: static;
-			}
-
-			.offices-section {
+			
+			.offices-section,
+			.faq-section {
 				padding: 60px 0;
-			}
-
-			.section-title {
-				font-size: 2rem;
-			}
-		}
-
-		/* Enhanced Project Start Section Styles */
-		.project-start-card {
-			background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-			backdrop-filter: blur(20px);
-			border: 1px solid rgba(37, 99, 235, 0.1);
-			position: relative;
-			overflow: hidden;
-		}
-
-		.project-start-card::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: 
-				radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
-				radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-				linear-gradient(45deg, transparent 40%, rgba(37, 99, 235, 0.02) 50%, transparent 60%);
-			pointer-events: none;
-		}
-
-		.project-header {
-			position: relative;
-			z-index: 2;
-			text-align: center;
-			margin-bottom: 3rem;
-		}
-
-		.project-icon-wrapper {
-			position: relative;
-			display: inline-block;
-			margin-bottom: 2rem;
-		}
-
-		.project-icon {
-			width: 100px;
-			height: 100px;
-			background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 0 auto;
-			position: relative;
-			animation: float 3s ease-in-out infinite;
-			box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
-		}
-
-		.project-icon::before {
-			content: '';
-			position: absolute;
-			top: -5px;
-			left: -5px;
-			right: -5px;
-			bottom: -5px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-			opacity: 0.3;
-			animation: pulse-ring 2s ease-out infinite;
-		}
-
-		.project-icon i {
-			font-size: 2.5rem;
-			color: white;
-			position: relative;
-			z-index: 2;
-		}
-
-		.project-sparkles {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 150px;
-			height: 150px;
-			pointer-events: none;
-		}
-
-		.sparkle {
-			position: absolute;
-			color: var(--accent-color);
-			font-size: 0.8rem;
-			animation: sparkle 2s ease-in-out infinite;
-		}
-
-		.sparkle-1 {
-			top: 10%;
-			right: 20%;
-			animation-delay: 0s;
-		}
-
-		.sparkle-2 {
-			bottom: 15%;
-			left: 15%;
-			animation-delay: 0.7s;
-		}
-
-		.sparkle-3 {
-			top: 20%;
-			left: 10%;
-			animation-delay: 1.4s;
-		}
-
-		.project-title {
-			font-size: 3.5rem;
-			font-weight: 800;
-			line-height: 1.1;
-			margin-bottom: 1.5rem;
-			font-family: 'Barlow Condensed', sans-serif;
-			background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-
-		.title-accent {
-			color: var(--accent-color);
-			display: inline-block;
-			animation: bounce 2s ease-in-out infinite;
-		}
-
-		.title-highlight {
-			position: relative;
-		}
-
-		.title-highlight::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			height: 3px;
-			background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-			border-radius: 2px;
-			animation: highlight-grow 1.5s ease-out 1s both;
-		}
-
-		.title-underline {
-			width: 80px;
-			height: 4px;
-			background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-			margin: 1rem auto 2rem;
-			border-radius: 2px;
-			position: relative;
-		}
-
-		.title-underline::after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 12px;
-			height: 12px;
-			background: var(--accent-color);
-			border-radius: 50%;
-			box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
-		}
-
-		.project-subtitle {
-			font-size: 1.2rem;
-			line-height: 1.7;
-			margin-bottom: 3rem;
-			color: var(--text-color);
-		}
-
-		.subtitle-highlight {
-			background: linear-gradient(120deg, rgba(37, 99, 235, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
-			padding: 0.5rem 1rem;
-			border-radius: 25px;
-			border: 1px solid rgba(37, 99, 235, 0.2);
-			display: inline-block;
-			margin-bottom: 1rem;
-			font-weight: 600;
-			color: var(--primary-color);
-		}
-
-		.project-stats {
-			display: flex;
-			justify-content: center;
-			gap: 3rem;
-			margin-top: 2rem;
-			padding: 2rem;
-			background: rgba(37, 99, 235, 0.05);
-			border-radius: 20px;
-			border: 1px solid rgba(37, 99, 235, 0.1);
-		}
-
-		.stat-item {
-			text-align: center;
-			position: relative;
-		}
-
-		.stat-item::after {
-			content: '';
-			position: absolute;
-			right: -1.5rem;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 1px;
-			height: 40px;
-			background: rgba(37, 99, 235, 0.2);
-		}
-
-		.stat-item:last-child::after {
-			display: none;
-		}
-
-		.stat-number {
-			font-size: 2.5rem;
-			font-weight: 800;
-			color: var(--primary-color);
-			font-family: 'Barlow Condensed', sans-serif;
-			line-height: 1;
-			margin-bottom: 0.5rem;
-		}
-
-		.stat-label {
-			font-size: 0.9rem;
-			color: var(--text-color);
-			font-weight: 500;
-			text-transform: uppercase;
-			letter-spacing: 0.5px;
-		}
-
-		/* Animations */
-		@keyframes float {
-			0%, 100% { transform: translateY(0px); }
-			50% { transform: translateY(-10px); }
-		}
-
-		@keyframes pulse-ring {
-			0% { transform: scale(1); opacity: 0.3; }
-			100% { transform: scale(1.3); opacity: 0; }
-		}
-
-		@keyframes sparkle {
-			0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
-			50% { opacity: 1; transform: scale(1) rotate(180deg); }
-		}
-
-		@keyframes bounce {
-			0%, 100% { transform: translateY(0); }
-			50% { transform: translateY(-5px); }
-		}
-
-		@keyframes highlight-grow {
-			0% { width: 0; }
-			100% { width: 100%; }
-		}
-
-		/* Responsive Design */
-		@media (max-width: 768px) {
-			.project-title {
-				font-size: 2.5rem;
-			}
-
-			.project-stats {
-				flex-direction: column;
-				gap: 1.5rem;
-			}
-
-			.stat-item::after {
-				display: none;
-			}
-
-			.project-icon {
-				width: 80px;
-				height: 80px;
-			}
-
-			.project-icon i {
-				font-size: 2rem;
-			}
-
-			.project-sparkles {
-				width: 120px;
-				height: 120px;
 			}
 		}
 	</style>
 
-</head>
-
-<body class="contact-page">
+<body id="home-version-1" class="about-page-template" data-style="default">
 
 	<a href="#main_content" data-type="section-switch" class="return-to-top">
 		<i class="fa fa-chevron-up"></i>
@@ -753,7 +537,11 @@
 		</div>
 	</div>
 
+
 	<div id="main_content" class="main-content">
+
+		<!-- Mobile Menu Overlay -->
+		<div class="mask-overlay"></div>
 
 		<!--=========================-->
 		<!--=        Navbar         =-->
@@ -761,24 +549,29 @@
 		<header class="site-header header-light header-transparent header-fixed" data-header-fixed="true" data-mobile-menu-resolution="992">
 			<div class="container">
 				<div class="header-inner">
+
 					<nav id="site-navigation" class="main-nav">
+
 						<div class="site-logo">
 							<a href="index.html" class="logo">
 								<img src="assets/img/logo-sticky.png" alt="Astriol Logo" class="main-logo">
 								<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
 							</a>
 						</div>
+						<!-- /.site-logo -->
 
 						<div class="menu-wrapper main-nav-container canvas-menu-wrapper" id="mega-menu-wrap">
 							<div class="canvas-header">
 								<div class="mobile-offcanvas-logo">
 									<a href="index.html">
-										<img src="assets/img/logo-community.png" alt="Astriol Logo" class="logo-sticky">
+										<img src="assets/img/logo-community.png" alt="site logo" class="logo-sticky">
 									</a>
 								</div>
+
 								<div class="close-menu" id="page-close-main-menu">
 									<i class="ti-close"></i>
 								</div>
+
 							</div>
 
 							<ul class="astriol-main-menu">
@@ -794,7 +587,7 @@
 								<li><a href="pricing.html">Pricing</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li><a href="portfolio.html">Portfolio</a></li>
-								<li class="has-submenu menu-item-depth-0">
+								<li class="has-submenu menu-item-depth-0" style="margin-right: 10px;">
 									<a href="#">Dashboard</a>
 									<ul class="sub-menu">
 										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
@@ -803,31 +596,37 @@
 								</li>
 							</ul>
 						</div>
+						<!-- /.menu-wrapper -->
 
 						<div class="nav-right">
 							<a href="login.html" class="gp-btn btn-outline btn-round">Change for Free</a>
-							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px;">RTL</button>
+							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px; margin-right:10px;">RTL</button>
 							<div class="astriol-burger-menu" id="mobile-menu-open">
 								<span class="bar-one"></span>
 								<span class="bar-two"></span>
 								<span class="bar-three"></span>
 							</div>
 						</div>
+
 					</nav>
+					<!-- /.site-nav -->
 				</div>
+				<!-- /.header-inner -->
 			</div>
+			<!-- /.container-full -->
 		</header>
+		<!-- /.site-header -->
 
 		<!--==========================-->
 		<!--=         Banner         =-->
 		<!--==========================-->
 		<section class="page-banner">
 			<div class="page-title-wrapper text-center">
-				<h1 class="page-title">Contact</h1>
+				<h1 class="page-title">Contact Us</h1>
 
 				<ul class="breadcrumbs">
 					<li><a href="index.html">Home</a></li>
-					<li>Contact</li>
+					<li>Contact Us</li>
 				</ul>
 			</div>
 			<!-- /.page-title-wrapper -->
@@ -848,321 +647,142 @@
 		<!--================================-->
 		<!--=         Contact Form         =-->
 		<!--================================-->
-		<section class="contact-main">
+		<section class="contact-form-page">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8">
-						<div class="contact-card project-start-card wow fadeInUp">
-							<div class="project-header">
-								<div class="project-icon-wrapper">
-									<div class="project-icon">
-										<i class="fas fa-rocket"></i>
-									</div>
-									<div class="project-sparkles">
-										<i class="fas fa-star sparkle sparkle-1"></i>
-										<i class="fas fa-star sparkle sparkle-2"></i>
-										<i class="fas fa-star sparkle sparkle-3"></i>
-									</div>
-								</div>
-								<h2 class="section-title project-title">
-									<span class="title-accent">Let's</span> Start Your <span class="title-highlight">Dream Project</span>
-								</h2>
-								<div class="title-underline"></div>
-								<p class="section-subtitle project-subtitle">
-									<span class="subtitle-highlight">🎯 Ready to transform your vision into reality?</span><br>
-									Fill out the form below and we'll craft a personalized strategy for your success. Our expert team responds within <strong>24 hours</strong> with a detailed project roadmap.
-								</p>
-								<div class="project-stats">
-									<div class="stat-item">
-										<div class="stat-number">500+</div>
-										<div class="stat-label">Projects Delivered</div>
-									</div>
-									<div class="stat-item">
-										<div class="stat-number">24hr</div>
-										<div class="stat-label">Response Time</div>
-									</div>
-									<div class="stat-item">
-										<div class="stat-number">98%</div>
-										<div class="stat-label">Client Satisfaction</div>
-									</div>
-								</div>
-							</div>
+					<div class="col-md-4">
+						<div class="contact-information">
+							<h3 class="contact-title">Contact Us</h3>
 
-							<form action="php/mailer.php" class="contact-form" data-gp-form="contact-form">
+							<p class="description">
+								Got a project in mind? Fill in the form
+								or send us a <a href="mailto:info@gptheme.com">direct email</a>.
+							</p>
+
+							<div class="info-list">
+								<h3 class="info-title">Phone:</h3>
+								<p>
+									+(347 124 574 342)
+								</p>
+							</div>
+							<!-- /.info-list -->
+
+							<div class="info-list">
+								<h3 class="info-title">Email:</h3>
+								<p>
+									Support@astriol.com
+								</p>
+							</div>
+							<!-- /.info-list -->
+
+							<div class="info-list mb-0">
+								<h3 class="info-title">Address:</h3>
+								<p>
+									541 Melville Astriol, Palo Alto,
+									DUSS 943, United States
+								</p>
+							</div>
+							<!-- /.info-list -->
+
+						</div>
+						<!-- /.contact-information -->
+					</div>
+					<!-- /.col-md-4 -->
+
+					<div class="col-md-8">
+						<div class="contact-form-wrapper">
+							<form action="php/mailer.php" class="contact-form-main" data-gp-form="contact-form">
 								<div class="row">
 									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" name="fname" class="form-control" placeholder="Enter your full name" required>
-											<label class="form-label">Full Name *</label>
-										</div>
+										<input type="text" name="fname" placeholder="Name" class="gp-input">
 									</div>
+									<!-- /.col-md-6 -->
+
 									<div class="col-md-6">
-										<div class="form-group">
-											<input type="email" name="email" class="form-control" placeholder="Enter your email address" required>
-											<label class="form-label">Email Address *</label>
-										</div>
+										<input type="email" name="email" placeholder="Email" class="gp-input">
 									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="tel" name="phone" class="form-control" placeholder="Enter your phone number">
-											<label class="form-label">Phone Number</label>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" name="company" class="form-control" placeholder="Your company name">
-											<label class="form-label">Company</label>
-										</div>
-									</div>
+									<!-- /.col-md-6 -->
+
 									<div class="col-md-12">
-										<div class="form-group">
-											<select name="project_type" class="form-control">
-												<option value="">Select a service</option>
-												<option value="web-design">Web Design</option>
-												<option value="mobile-app">Mobile App Development</option>
-												<option value="branding">Branding & Identity</option>
-												<option value="ui-ux">UI/UX Design</option>
-												<option value="ecommerce">E-commerce Solutions</option>
-												<option value="consulting">Digital Consulting</option>
-												<option value="other">Other</option>
-											</select>
-											<label class="form-label">Project Type</label>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<textarea name="message" class="form-control textarea" rows="6" placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required></textarea>
-											<label class="form-label">Project Details *</label>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<button type="submit" class="btn-submit">
-											<i class="fas fa-paper-plane"></i>
-											Send Message
-										</button>
-										<div class="form-result alert" style="display: none;">
+										<input type="text" name="subject" placeholder="Subject" class="gp-input">
+										<textarea name="content" id="message" cols="30" rows="10" class="gp-input gp-textarea" placeholder="Your Comment"></textarea>
+										<button type="submit" class="btn-submit" style="background: #2563eb; border-color: #2563eb;">Send Message</button>
+
+										<div class="form-result alert">
 											<div class="content"></div>
 										</div>
+										<!-- /.form-result-->
 									</div>
 								</div>
+								<!-- /.row -->
 							</form>
+							<!-- /.contact-form-main -->
 						</div>
+						<!-- /.contact-form-wrapper -->
 					</div>
-
-					<div class="col-lg-4">
-						<div class="contact-card contact-info-card wow fadeInUp">
-							<h3 class="section-title" style="color: white;">Get in Touch</h3>
-							<p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
-								Ready to discuss your project? Here's how you can reach us.
-							</p>
-
-							<div class="contact-info-item">
-								<div class="contact-icon">
-									<i class="fas fa-map-marker-alt"></i>
-								</div>
-								<div class="contact-details">
-									<h4>Visit Our Office</h4>
-									<p>123 Business Street<br>Tech City, TC 12345<br>United States</p>
-								</div>
-							</div>
-
-							<div class="contact-info-item">
-								<div class="contact-icon">
-									<i class="fas fa-phone"></i>
-								</div>
-								<div class="contact-details">
-									<h4>Call Us</h4>
-									<p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-									<p style="font-size: 0.9rem; opacity: 0.8;">Mon - Fri, 9:00 AM - 6:00 PM</p>
-								</div>
-							</div>
-
-							<div class="contact-info-item">
-								<div class="contact-icon">
-									<i class="fas fa-envelope"></i>
-								</div>
-								<div class="contact-details">
-									<h4>Email Us</h4>
-									<p><a href="mailto:hello@astriol.com">hello@astriol.com</a></p>
-									<p><a href="mailto:support@astriol.com">support@astriol.com</a></p>
-								</div>
-							</div>
-
-							<div class="contact-info-item">
-								<div class="contact-icon">
-									<i class="fas fa-clock"></i>
-								</div>
-								<div class="contact-details">
-									<h4>Response Time</h4>
-									<p>We typically respond within 2-4 hours during business days.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<!-- /.col-md-8 -->
 				</div>
+				<!-- /.row -->
+
+				<div class="row mt-140">
+					<div class="col-sm-4">
+						<div class="address-box style-border">
+							<h4 class="address-title">
+								New York
+							</h4>
+
+							<p class="address">
+								340 Hilldale Lane Maryville, TN<br>
+								46802, United States
+							</p>
+						</div>
+						<!-- /.address-box -->
+					</div>
+					<!-- /.col-sm-4 -->
+
+					<div class="col-sm-4">
+						<div class="address-box">
+							<h4 class="address-title">
+								Australia
+							</h4>
+
+							<p class="address">
+								8201 44th Avenue NE, TN 22842,<br>
+								Australia
+							</p>
+						</div>
+						<!-- /.address-box -->
+					</div>
+					<!-- /.col-sm-4 -->
+
+					<div class="col-sm-4">
+						<div class="address-box">
+							<h4 class="address-title">
+								London
+							</h4>
+
+							<p class="address">
+								425 Montgomery Street,<br>
+								TN 37803, London
+							</p>
+						</div>
+						<!-- /.address-box -->
+					</div>
+					<!-- /.col-sm-4 -->
+				</div>
+				<!-- /.row -->
 			</div>
+			<!-- /.container -->
 		</section>
-
-		<!--==========================-->
-		<!--=       Office Locations =-->
-		<!--==========================-->
-		<section class="offices-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 mx-auto text-center">
-						<h2 class="section-title wow fadeInUp">Our Global Presence</h2>
-						<p class="section-subtitle wow fadeInUp">
-							With offices around the world, we're always close to our clients and ready to provide personalized service and support.
-						</p>
-					</div>
-				</div>
-
-				<div class="row mt-5">
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="office-card wow fadeInUp">
-							<div class="office-icon">
-								<i class="fas fa-building"></i>
-							</div>
-							<h3 class="office-title">New York</h3>
-							<p class="office-address">
-								123 Business Avenue<br>
-								New York, NY 10001<br>
-								United States<br><br>
-								<strong>Phone:</strong> +1 (555) 123-4567<br>
-								<strong>Email:</strong> ny@astriol.com
-							</p>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="office-card wow fadeInUp">
-							<div class="office-icon">
-								<i class="fas fa-landmark"></i>
-							</div>
-							<h3 class="office-title">London</h3>
-							<p class="office-address">
-								456 Innovation Street<br>
-								London SW1A 1AA<br>
-								United Kingdom<br><br>
-								<strong>Phone:</strong> +44 20 7123 4567<br>
-								<strong>Email:</strong> london@astriol.com
-							</p>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="office-card wow fadeInUp">
-							<div class="office-icon">
-								<i class="fas fa-city"></i>
-							</div>
-							<h3 class="office-title">Sydney</h3>
-							<p class="office-address">
-								789 Tech Boulevard<br>
-								Sydney NSW 2000<br>
-								Australia<br><br>
-								<strong>Phone:</strong> +61 2 9123 4567<br>
-								<strong>Email:</strong> sydney@astriol.com
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!--==========================-->
-		<!--=    Client Testimonials  =-->
-		<!--==========================-->
-		<section class="testimonials-section" style="padding: 120px 0; background: var(--light-color);">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 mx-auto text-center">
-						<h2 class="section-title wow fadeInUp">What Our Clients Say</h2>
-						<p class="section-subtitle wow fadeInUp">
-							Don't just take our word for it. Here's what our satisfied clients have to say about working with us.
-						</p>
-					</div>
-				</div>
-
-				<div class="row mt-5">
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="testimonial-card wow fadeInUp" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 100%; transition: transform 0.3s ease;">
-							<div class="stars" style="color: #fbbf24; margin-bottom: 1rem;">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</div>
-							<p style="font-style: italic; margin-bottom: 1.5rem; color: var(--text-color);">
-								"Astriol transformed our online presence completely. Their attention to detail and creative approach exceeded our expectations. The team was professional and delivered on time."
-							</p>
-							<div class="author" style="display: flex; align-items: center;">
-								<div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; margin-right: 1rem;">JD</div>
-								<div>
-									<h5 style="margin: 0; color: var(--dark-color); font-weight: 600;">John Davis</h5>
-									<span style="color: var(--text-color); font-size: 0.9rem;">CEO, TechStart Inc.</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="testimonial-card wow fadeInUp" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 100%; transition: transform 0.3s ease;">
-							<div class="stars" style="color: #fbbf24; margin-bottom: 1rem;">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</div>
-							<p style="font-style: italic; margin-bottom: 1.5rem; color: var(--text-color);">
-								"Working with Astriol was a game-changer for our business. They understood our vision and brought it to life with stunning design and flawless execution."
-							</p>
-							<div class="author" style="display: flex; align-items: center;">
-								<div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; margin-right: 1rem;">SM</div>
-								<div>
-									<h5 style="margin: 0; color: var(--dark-color); font-weight: 600;">Sarah Mitchell</h5>
-									<span style="color: var(--text-color); font-size: 0.9rem;">Founder, Creative Studio</span>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6 mb-4">
-						<div class="testimonial-card wow fadeInUp" style="background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 100%; transition: transform 0.3s ease;">
-							<div class="stars" style="color: #fbbf24; margin-bottom: 1rem;">
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-								<i class="fas fa-star"></i>
-							</div>
-							<p style="font-style: italic; margin-bottom: 1.5rem; color: var(--text-color);">
-								"The level of professionalism and expertise at Astriol is outstanding. They delivered a beautiful, functional website that has significantly boosted our conversions."
-							</p>
-							<div class="author" style="display: flex; align-items: center;">
-								<div class="author-avatar" style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; margin-right: 1rem;">MR</div>
-								<div>
-									<h5 style="margin: 0; color: var(--dark-color); font-weight: 600;">Michael Rodriguez</h5>
-									<span style="color: var(--text-color); font-size: 0.9rem;">Marketing Director, GlobalTech</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- /.contact-form-page -->
 
 		<!--==============================-->
-		<!--=         Map Section        =-->
+		<!--=         Google Map         =-->
 		<!--==============================-->
-		<section class="map-section">
-			<div class="map-placeholder">
-				<i class="fas fa-map-marked-alt"></i>
-				<h3>Interactive Map</h3>
-				<p>Google Maps integration would be displayed here</p>
-			</div>
+		<section class="google-map">
+			<div class="gmap3-area" data-lat="40.712776" data-lng="-74.005974" data-address="Address" data-zoom="16" data-mrkr="media/feature/marker.svg" data-scrollwheel="false"></div>
 		</section>
+		<!-- /.google-map -->
 
 		<!--=========================-->
 		<!--=        Footer         =-->
@@ -1172,9 +792,7 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="widget footer-widget widget-about">
-							<div class="footer-logo">
-								<img src="assets/img/logo-saas-light.png" alt="Astriol Logo">
-							</div>
+							<h3 class="widget-title">Astriol</h3>
 							<p class="widget-description">
 								Creating innovative digital solutions that transform businesses and deliver exceptional user experiences.
 							</p>
@@ -1232,143 +850,27 @@
 			</div>
 
 			<div class="footer-bottom-shape">
-				<div class="three-left">
-					<img src="media/footer/tree_left.png" alt="Decorative tree">
-				</div>
-				<div class="three-right">
-					<img src="media/footer/tree_right.png" alt="Decorative tree">
-				</div>
-				<div class="container">
-					<div class="footer-center-victor">
-						<div class="foo-shape-one">
-							<img src="media/footer/man-female1.png" alt="Team member">
-						</div>
-						<div class="foo-shape-two">
-							<img src="media/footer/man1.png" alt="Team member">
-						</div>
-						<div class="foo-shape-three">
-							<img src="media/footer/man-female2.png" alt="Team member">
-						</div>
-						<div class="foo-shape-four">
-							<img src="media/footer/man2.png" alt="Team member">
-						</div>
-						<div class="foo-shape-five">
-							<img src="media/footer/vase.png" alt="Decorative vase">
-						</div>
-					</div>
-				</div>
+				<!-- Decorative footer images removed -->
 			</div>
 		</footer>
+		<!-- /#footer -->
+
 
 	</div>
+	<!-- /#site -->
 
 	<!-- Dependency Scripts -->
 	<script src="dependencies/jquery/jquery.min.js"></script>
-	<script src="dependencies/popper.js/popper.min.js"></script>
 	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
-	<script src="dependencies/wow/js/wow.min.js"></script>
 
 	<!-- Site Scripts -->
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/app.js"></script>
+	<script src="assets/js/mobile-menu.js"></script>
+				const savedDir = localStorage.getItem('astriol-rtl') || 'ltr';
+				document.documentElement.setAttribute('dir', savedDir);
+				rtlToggle.textContent = savedDir === 'rtl' ? 'LTR' : 'RTL';
 
-	<!-- Initialize Animations -->
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			// Initialize WOW animations
-			
-			// Enhanced form interactions
-			const formInputs = document.querySelectorAll('.form-control');
-			const submitBtn = document.querySelector('.btn-submit');
-			const form = document.querySelector('.contact-form');
-
-			// Add floating label effect
-			formInputs.forEach(input => {
-				input.addEventListener('focus', function() {
-					this.parentElement.classList.add('focused');
-				});
-
-				input.addEventListener('blur', function() {
-					if (!this.value) {
-						this.parentElement.classList.remove('focused');
-					}
-				});
-
-				// Check if input has value on load
-				if (input.value) {
-					input.parentElement.classList.add('focused');
-				}
-			});
-
-			// Form submission with loading state
-			if (form && submitBtn) {
-				form.addEventListener('submit', function(e) {
-					e.preventDefault();
-					
-					// Add loading state
-					submitBtn.classList.add('loading');
-					submitBtn.innerHTML = '<i class="fas fa-spinner"></i> Sending...';
-					
-					// Simulate form submission (replace with actual form handling)
-					setTimeout(() => {
-						submitBtn.classList.remove('loading');
-						submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-						
-						// Show success message
-						const resultDiv = document.querySelector('.form-result');
-						if (resultDiv) {
-							resultDiv.style.display = 'block';
-							resultDiv.className = 'form-result alert success';
-							resultDiv.innerHTML = '<div class="content">Thank you for your message! We\'ll get back to you within 24 hours.</div>';
-						}
-						
-						// Reset form
-						form.reset();
-						formInputs.forEach(input => {
-							input.parentElement.classList.remove('focused');
-						});
-						
-						// Reset button after 3 seconds
-						setTimeout(() => {
-							submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-						}, 3000);
-						
-					}, 2000);
-				});
-			}
-
-			// Add hover effects to testimonial cards
-			const testimonialCards = document.querySelectorAll('.testimonial-card');
-			testimonialCards.forEach(card => {
-				card.addEventListener('mouseenter', function() {
-					this.style.transform = 'translateY(-5px)';
-				});
-				
-				card.addEventListener('mouseleave', function() {
-					this.style.transform = 'translateY(0)';
-				});
-			});
-
-			// Add smooth scrolling for any anchor links
-			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function (e) {
-					e.preventDefault();
-					const target = document.querySelector(this.getAttribute('href'));
-					if (target) {
-						target.scrollIntoView({
-							behavior: 'smooth',
-							block: 'start'
-						});
-					}
-				});
-			});
-		});
-	</script>
-
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const rtlToggle = document.getElementById('rtl-toggle');
-			if (rtlToggle) {
 				rtlToggle.addEventListener('click', function() {
 					const html = document.documentElement;
 					if (html.getAttribute('dir') === 'rtl') {
@@ -1381,17 +883,10 @@
 						localStorage.setItem('astriol-rtl', 'rtl');
 					}
 				});
-				// On load, set dir from localStorage
-				const savedDir = localStorage.getItem('astriol-rtl');
-				if (savedDir === 'rtl') {
-					setTimeout(() => {
-						document.documentElement.setAttribute('dir', 'rtl');
-						rtlToggle.textContent = 'LTR';
-					}, 0);
-				}
 			}
 		});
 	</script>
 
 </body>
+
 </html>

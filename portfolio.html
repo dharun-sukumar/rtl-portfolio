@@ -35,8 +35,9 @@
 
 	<!-- Custom Portfolio Styles -->
 	<style>
-		body {
-			font-family: 'Poppins', sans-serif;
+		/* Global Font Family */
+		* {
+			font-family: 'Poppins', sans-serif !important;
 		}
 
 		:root {
@@ -47,7 +48,7 @@
 			--light-color: #f8fafc;
 			--text-color: #475569;
 			--border-color: #e2e8f0;
-			--success-color: #059669;
+			--success-color: #2563eb;
 			--warning-color: #d97706;
 			--error-color: #dc2626;
 			--gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -347,6 +348,8 @@
 
 		[dir="rtl"] .nav-right {
 			float: left;
+			margin-right: 10px;
+			margin-left: 10px;
 		}
 
 		[dir="rtl"] .astriol-main-menu {
@@ -493,7 +496,7 @@
 								<li><a href="pricing.html">Pricing</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li class="current-menu-item"><a href="portfolio.html">Portfolio</a></li>
-								<li class="has-submenu menu-item-depth-0">
+								<li class="has-submenu menu-item-depth-0" style="margin-right: 10px;">
 									<a href="#">Dashboard</a>
 									<ul class="sub-menu">
 										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
@@ -505,7 +508,7 @@
 
 						<div class="nav-right">
 							<a href="login.html" class="gp-btn btn-outline btn-round">Change for Free</a>
-							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px;">RTL</button>
+							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px; margin-right: 10px;">RTL</button>
 							<div class="astriol-burger-menu" id="mobile-menu-open">
 								<span class="bar-one"></span>
 								<span class="bar-two"></span>
@@ -787,9 +790,7 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6">
 						<div class="widget footer-widget widget-about">
-							<div class="footer-logo">
-								<img src="assets/img/logo-saas-light.png" alt="Astriol Logo">
-							</div>
+							<h3 class="widget-title">Astriol</h3>
 							<p class="widget-description">
 								Creating innovative digital solutions that transform businesses and deliver exceptional user experiences.
 							</p>
@@ -847,31 +848,7 @@
 			</div>
 
 			<div class="footer-bottom-shape">
-				<div class="three-left">
-					<img src="media/footer/tree_left.png" alt="Decorative tree">
-				</div>
-				<div class="three-right">
-					<img src="media/footer/tree_right.png" alt="Decorative tree">
-				</div>
-				<div class="container">
-					<div class="footer-center-victor">
-						<div class="foo-shape-one">
-							<img src="media/footer/man-female1.png" alt="Team member">
-						</div>
-						<div class="foo-shape-two">
-							<img src="media/footer/man1.png" alt="Team member">
-						</div>
-						<div class="foo-shape-three">
-							<img src="media/footer/man-female2.png" alt="Team member">
-						</div>
-						<div class="foo-shape-four">
-							<img src="media/footer/man2.png" alt="Team member">
-						</div>
-						<div class="foo-shape-five">
-							<img src="media/footer/vase.png" alt="Decorative vase">
-						</div>
-					</div>
-				</div>
+				<!-- Decorative footer images removed -->
 			</div>
 		</footer>
 
@@ -956,6 +933,49 @@
 					}, 0);
 				}
 			}
+		});
+	</script>
+
+	<!-- MOBILE MENU SCRIPT -->
+	<script>
+		$(document).ready(function() {
+			// Wait for page to fully load
+			setTimeout(function() {
+				// Remove any existing handlers
+				$('#mobile-menu-open').off('click');
+				
+				// Add mobile menu click handler
+				$('#mobile-menu-open').on('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					var $menu = $('.canvas-menu-wrapper');
+					
+					if ($menu.hasClass('open')) {
+						// Close menu
+						$menu.removeClass('open');
+						$('body').removeClass('page-popup-open');
+						$('html').removeClass('no-scroll');
+						$(this).removeClass('active');
+					} else {
+						// Open menu
+						$menu.addClass('open');
+						$('body').addClass('page-popup-open');
+						$('html').addClass('no-scroll');
+						$(this).addClass('active');
+					}
+				});
+				
+				// Close menu when clicking close button
+				$(document).on('click', '#page-close-main-menu', function(e) {
+					e.preventDefault();
+					$('.canvas-menu-wrapper').removeClass('open');
+					$('body').removeClass('page-popup-open');
+					$('html').removeClass('no-scroll');
+					$('#mobile-menu-open').removeClass('active');
+				});
+				
+			}, 500);
 		});
 	</script>
 

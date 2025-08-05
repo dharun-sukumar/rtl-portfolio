@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Isolated Test</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <style>
+        /* Override styles for testing */
+        body { background: #f5f5f5; padding: 20px; }
+        .test-info { background: white; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .mobile-menu-container { 
+            background: white; 
+            padding: 20px; 
+            border: 2px solid #333; 
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        /* Force mobile menu button to be visible */
+        #mobile-menu-open {
+            display: block !important;
+            background: red !important;
+            border: 2px solid black !important;
+            padding: 15px !important;
+            cursor: pointer !important;
+            position: relative !important;
+            z-index: 99999 !important;
+        }
+        
+        .canvas-menu-wrapper {
+            position: fixed !important;
+            top: 0 !important;
+            left: -400px !important;
+            width: 350px !important;
+            height: 100vh !important;
+            background: white !important;
+            z-index: 9999 !important;
+            transition: left 0.3s ease !important;
+            padding: 20px !important;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1) !important;
+        }
+        
+        .canvas-menu-wrapper.open {
+            left: 0 !important;
+        }
+        
+        .mask-overlay {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0,0,0,0.5) !important;
+            z-index: 9998 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h1>Mobile Menu Isolated Test</h1>
+        <p>Screen width: <span id="screen-width"></span>px</p>
+        <p>Status: <span id="status">Loading...</span></p>
+    </div>
+
+    <div class="mobile-menu-container">
+        <h2>Mobile Menu Button Test</h2>
+        <div class="astriol-burger-menu" id="mobile-menu-open">
+            <span class="bar-one"></span>
+            <span class="bar-two"></span>
+            <span class="bar-three"></span>
+        </div>
+    </div>
+
+    <div class="canvas-menu-wrapper" id="mobile-menu">
+        <div class="canvas-header">
+            <h3>Mobile Menu</h3>
+            <button class="close-menu">Close</button>
+        </div>
+        <ul class="astriol-main-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+    </div>
+
+    <script src="dependencies/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#screen-width').text($(window).width());
+            
+            console.log('=== ISOLATED TEST STARTING ===');
+            console.log('jQuery loaded:', typeof $ !== 'undefined');
+            console.log('Mobile menu button exists:', $('#mobile-menu-open').length);
+            console.log('Canvas wrapper exists:', $('.canvas-menu-wrapper').length);
+            
+            $('#mobile-menu-open').on('click', function(e) {
+                e.preventDefault();
+                console.log('Button clicked!');
+                $('#status').text('Button clicked at ' + new Date().toLocaleTimeString());
+                
+                var $menu = $('.canvas-menu-wrapper');
+                var isOpen = $menu.hasClass('open');
+                
+                if (isOpen) {
+                    console.log('Closing menu');
+                    $menu.removeClass('open');
+                    $('.mask-overlay').remove();
+                } else {
+                    console.log('Opening menu');
+                    $('<div class="mask-overlay"></div>').appendTo('body');
+                    $menu.addClass('open');
+                }
+            });
+            
+            $('.close-menu, .mask-overlay').on('click', function(e) {
+                e.preventDefault();
+                console.log('Closing via close button or overlay');
+                $('.canvas-menu-wrapper').removeClass('open');
+                $('.mask-overlay').remove();
+            });
+            
+            $(document).on('click', '.mask-overlay', function() {
+                $('.canvas-menu-wrapper').removeClass('open');
+                $('.mask-overlay').remove();
+            });
+            
+            $('#status').text('Ready - Click the red button');
+        });
+    </script>
+</body>
+</html>

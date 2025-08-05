@@ -32,6 +32,11 @@
 
 	<!-- RTL Support Styles -->
 	<style>
+		/* Global Font Family */
+		* {
+			font-family: 'Poppins', sans-serif !important;
+		}
+
 		[dir="rtl"] {
 			text-align: right;
 		}
@@ -43,6 +48,7 @@
 
 		[dir="rtl"] .nav-right {
 			float: left;
+			margin-right: 10px;
 		}
 
 		[dir="rtl"] .astriol-main-menu {
@@ -108,6 +114,8 @@
 
 	<div id="main_content" class="main-content">
 
+		<!-- Mobile Menu Overlay -->
+		<div class="mask-overlay"></div>
 
 		<!--=========================-->
 		<!--=        Navbar         =-->
@@ -153,7 +161,7 @@
 								<li><a href="pricing.html">Pricing</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li><a href="portfolio.html">Portfolio</a></li>
-								<li class="has-submenu menu-item-depth-0">
+								<li class="has-submenu menu-item-depth-0" style="margin-right: 10px;">
 									<a href="#">Dashboard</a>
 									<ul class="sub-menu">
 										<li><a href="admin-dashboard.html">Admin Dashboard</a></li>
@@ -166,7 +174,7 @@
 
 						<div class="nav-right">
 							<a href="login.html" class="gp-btn btn-outline btn-round">Change for Free</a>
-							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px;">RTL</button>
+							<button id="rtl-toggle" class="gp-btn btn-outline btn-round" style="margin-left:10px; margin-right: 10px;">RTL</button>
 							<div class="astriol-burger-menu" id="mobile-menu-open">
 								<span class="bar-one"></span>
 								<span class="bar-two"></span>
@@ -417,7 +425,7 @@
 								</h3>
 							</div>
 							<div class="image-wrapper">
-								<img src="media/about/1.jpg" alt="astriol about">
+								<img src="https://media.istockphoto.com/id/1351571961/photo/looking-directly-up-at-the-skyline-of-the-financial-district-in-central-london.jpg?s=612x612&w=0&k=20&c=4J_aWJc5gMATCtIbMkF0dMq4dzz_XjLx5DpwnuPJwkg=" alt="astriol about">
 							</div>
 						</div>
 					</div>
@@ -511,121 +519,69 @@
 		<!--=========================-->
 		<footer class="site-footer" id="footer-saas-two">
 			<div class="container">
-				<div class="footer-nner wow pixFadeUp">
-					<div class="row">
-						<div class="col-lg-4 col-md-6">
-							<div class="widget footer-widget widget-about">
-								<div class="footer-logo">
-									<img src="assets/img/logo-saas-light.png" alt="site-logo">
-								</div>
-								<div class="copyright-text">
-									<p class="copyright-text">Copyright © 2021 Astriol by <a href="http://gptheme.com">GpTheme</a>. All Rights Reserved</p>
-								</div>
-
-								<ul class="footer-social-link">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="widget footer-widget widget-about">
+							<h3 class="widget-title">Astriol</h3>
+							<p class="widget-description">
+								Creating innovative digital solutions that transform businesses and deliver exceptional user experiences.
+							</p>
+							<div class="copyright-text">
+								<p>Copyright © 2025 Astriol by <a href="http://gptheme.com">GpTheme</a>. All Rights Reserved</p>
 							</div>
-							<!-- /.widget footer-widget -->
+							<ul class="footer-social-link">
+								<li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+								<li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+							</ul>
 						</div>
-						<!-- /.col-lg-3 col-md-6 -->
-
-						<div class="col-lg-3 col-md-6">
-							<div class="widget footer-widget">
-								<h3 class="widget-title">Download</h3>
-
-								<ul class="footer-menu">
-									<li><a href="#">Company</a></li>
-									<li><a href="#">Android App</a></li>
-									<li><a href="#">Ios App</a></li>
-									<li><a href="#">Desktop</a></li>
-									<li><a href="#">Blog</a></li>
-									<li><a href="#">Partners</a></li>
-									<li><a href="#">Careers</a></li>
-								</ul>
-							</div>
-							<!-- /.widget footer-widget -->
-						</div>
-						<!-- /.col-lg-3 col-md-6 -->
-
-						<div class="col-lg-3 col-md-6">
-							<div class="widget footer-widget">
-								<h3 class="widget-title">Quick Links</h3>
-
-								<ul class="footer-menu">
-									<li><a href="#">About Astriol</a></li>
-									<li><a href="#">Web Jobs</a></li>
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">Creative</a></li>
-									<li><a href="#">UI/UX</a></li>
-									<li><a href="#">Template</a></li>
-								</ul>
-							</div>
-							<!-- /.widget footer-widget -->
-						</div>
-						<!-- /.col-lg-3 col-md-6 -->
-
-						<div class="col-lg-2 col-md-6">
-							<div class="widget footer-widget">
-								<h3 class="widget-title">Information</h3>
-
-								<ul class="footer-menu">
-									<li><a href="#">Reporting</a></li>
-									<li><a href="#">Management </a></li>
-									<li><a href="#">Tracking </a></li>
-									<li><a href="#">Pricing </a></li>
-									<li><a href="#">Coinking </a></li>
-									<li><a href="#">Support </a></li>
-								</ul>
-							</div>
-							<!-- /.widget footer-widget -->
-						</div>
-						<!-- /.col-lg-3 col-md-6 -->
 					</div>
-					<!-- /.row -->
+
+					<div class="col-lg-2 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Services</h3>
+							<ul class="footer-menu">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">Mobile Apps</a></li>
+								<li><a href="#">UI/UX Design</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">E-commerce</a></li>
+								<li><a href="#">Consulting</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Quick Links</h3>
+							<ul class="footer-menu">
+								<li><a href="about.html">About Astriol</a></li>
+								<li><a href="portfolio.html">Our Portfolio</a></li>
+								<li><a href="pricing.html">Pricing Plans</a></li>
+								<li><a href="blog.html">Latest News</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="#">Career Opportunities</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6">
+						<div class="widget footer-widget">
+							<h3 class="widget-title">Contact Info</h3>
+							<div class="contact-info">
+								<p><i class="fas fa-map-marker-alt"></i> 123 Business Street, Tech City, TC 12345</p>
+								<p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+								<p><i class="fas fa-envelope"></i> hello@astriol.com</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- /.footer-nner -->
 			</div>
-			<!-- /.container -->
 
 			<div class="footer-bottom-shape">
-				<div class="three-left">
-					<img src="media/footer/tree_left.png" alt="tree">
-				</div>
-
-				<div class="three-right">
-					<img src="media/footer/tree_right.png" alt="tree">
-				</div>
-
-				<div class="container">
-					<div class="footer-center-victor">
-						<div class="foo-shape-one">
-							<img src="media/footer/man-female1.png" alt="man">
-						</div>
-
-						<div class="foo-shape-two">
-							<img src="media/footer/man1.png" alt="man">
-						</div>
-
-						<div class="foo-shape-three">
-							<img src="media/footer/man-female2.png" alt="man">
-						</div>
-
-						<div class="foo-shape-four">
-							<img src="media/footer/man2.png" alt="man">
-						</div>
-
-						<div class="foo-shape-five">
-							<img src="media/footer/vase.png" alt="man">
-						</div>
-					</div>
-					<!-- /.footer-center-victor -->
-				</div>
-				<!-- /.container -->
+				<!-- Decorative footer images removed -->
 			</div>
-			<!-- /.footer-bottom-shape -->
 		</footer>
 		<!-- /#footer -->
 
@@ -640,33 +596,7 @@
 	<!-- Site Scripts -->
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/app.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const rtlToggle = document.getElementById('rtl-toggle');
-			if (rtlToggle) {
-				rtlToggle.addEventListener('click', function() {
-					const html = document.documentElement;
-					if (html.getAttribute('dir') === 'rtl') {
-						html.setAttribute('dir', 'ltr');
-						rtlToggle.textContent = 'RTL';
-						localStorage.setItem('astriol-rtl', 'ltr');
-					} else {
-						html.setAttribute('dir', 'rtl');
-						rtlToggle.textContent = 'LTR';
-						localStorage.setItem('astriol-rtl', 'rtl');
-					}
-				});
-				// On load, set dir from localStorage
-				const savedDir = localStorage.getItem('astriol-rtl');
-				if (savedDir === 'rtl') {
-					setTimeout(() => {
-						document.documentElement.setAttribute('dir', 'rtl');
-						rtlToggle.textContent = 'LTR';
-					}, 0);
-				}
-			}
-		});
-	</script>
+	<script src="assets/js/mobile-menu.js"></script>
 
 </body>
 

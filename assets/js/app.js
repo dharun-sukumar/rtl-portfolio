@@ -29,16 +29,16 @@ var GPTHEME = GPTHEME || {};
 
 			// Menus
 			this.megaMenu = this.header.find('#mega-menu-wrap');
-			this.mobileMenu = $('[data-mobile-menu-resolution]').data('mobile-menu-resolution');
+			this.mobileMenu = $('[data-mobile-menu-resolution]').data('mobile-menu-resolution') || 991;
 
 			this.resize();
 		},
 
 		resize: function () {
-			this.isDesktop = $(window).width() >= 991;
+			this.isDesktop = $(window).width() >= 992;
 			this.isMobile = $(window).width() <= 991;
 			this.isPad = $(window).width() <= 1024;
-			this.isMobileMenu = $(window).width() <= Gp.mobileMenu;
+			this.isMobileMenu = $(window).width() <= this.mobileMenu;
 		}
 	};
 
@@ -130,29 +130,159 @@ var GPTHEME = GPTHEME || {};
 				startVisible: true
 			});
 
-			var $body = $('body');
-
-			var $popup = $('.canvas-menu-wrapper');
-
-			$("#mobile-menu-open").on('click', function (e) {
-				e.preventDefault();
-				var mask = '<div class="mask-overlay">';
-				$(mask).hide().appendTo('body').fadeIn('fast');
-				$popup.addClass('open');
-				$(this).addClass('active');
+			// MOBILE MENU FUNCTIONALITY - DISABLED FOR SIMPLE VERSION
+			/*
+			console.log('Initializing mobile menu...');
+			
+			// Initialize mobile menu on document ready
+			setTimeout(function() {
+				initializeMobileMenu();
+			}, 100);
+			*/
+			
+			function initializeMobileMenu() {
+				console.log('Mobile menu initialization started');
+				
+				// Force mobile header class if screen is small
+				if ($(window).width() <= 991) {
+					$('.site-header').addClass('mobile-header');
+					$('body').addClass('is-mobile-menu');
+				}
+				
+				// Remove any existing event handlers to prevent conflicts
+				$(document).off('click', '#mobile-menu-open');
+				$(document).off('click', '.mask-overlay, .close-menu');
+				$(document).off('click', '.canvas-menu-wrapper .has-submenu > a');
+				
+				// Mobile menu button click handler
+				$(document).on('click', '#mobile-menu-open', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					console.log('Mobile menu button clicked!');
+					
+					var $menuWrapper = $('.canvas-menu-wrapper, .main-nav-container');
+					var $button = $(this);
+					var $body = $('body');
+					
+					if ($menuWrapper.hasClass('open')) {
+						// Close menu
+						console.log('Closing mobile menu');
+						closeMobileMenu();
+					} else {
+						// Open menu
+						console.log('Opening mobile menu');
+						openMobileMenu();
+					}
+				});
+				
+				// Mask overlay and close button handlers
+				$(document).on('click', '.mask-overlay, .close-menu', function(e) {
+					e.preventDefault();
+					console.log('Closing menu via overlay/close button');
+					closeMobileMenu();
+				});
+				
+				// Submenu toggle handlers
+				$(document).on('click', '.canvas-menu-wrapper .has-submenu > a', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					var $this = $(this);
+					var $submenu = $this.next('.sub-menu');
+					var $parent = $this.parent();
+					
+					console.log('Submenu toggle clicked');
+					
+					if ($submenu.is(':visible')) {
+						// Close this submenu
+						$submenu.slideUp(300);
+						$this.removeClass('active');
+					} else {
+						// Close all other submenus first
+						$('.canvas-menu-wrapper .sub-menu').slideUp(300);
+						$('.canvas-menu-wrapper .has-submenu > a').removeClass('active');
+						
+						// Open this submenu
+						$submenu.slideDown(300);
+						$this.addClass('active');
+					}
+				});
+				
+				// Regular menu link handlers (close menu after click)
+				$(document).on('click', '.canvas-menu-wrapper .astriol-main-menu a:not(.has-submenu > a)', function(e) {
+					console.log('Regular menu link clicked, closing menu');
+					setTimeout(function() {
+						closeMobileMenu();
+					}, 100);
+				});
+				
+				// Mobile RTL toggle
+				$(document).on('click', '#rtl-toggle-mobile', function(e) {
+					e.preventDefault();
+					// Add RTL toggle functionality here if needed
+					console.log('Mobile RTL toggle clicked');
+				});
+				
+				console.log('Mobile menu initialization completed');
+			}
+			
+			function openMobileMenu() {
+				var $menuWrapper = $('.canvas-menu-wrapper, .main-nav-container');
+				var $body = $('body');
+				var $html = $('html');
+				
+				// Ensure mobile header
+				$('.site-header').addClass('mobile-header');
+				
+				// Create and show overlay
+				if (!$('.mask-overlay').length) {
+					$('<div class="mask-overlay"></div>').appendTo('body');
+				}
+				$('.mask-overlay').fadeIn(300);
+				
+				// Add classes
+				$menuWrapper.addClass('open');
+				$('#mobile-menu-open').addClass('active');
 				$body.addClass('page-popup-open');
-				$("html").addClass("no-scroll sidebar-open").height(window.innerHeight + "px");
-			});
-
-			$(".close-menu, .mask-overlay").on('click', function (e) {
-				e.preventDefault();
-				$('.mask-overlay').remove();
+				$html.addClass('no-scroll sidebar-open');
+				
+				console.log('Mobile menu opened');
+			}
+			
+			function closeMobileMenu() {
+				var $menuWrapper = $('.canvas-menu-wrapper, .main-nav-container');
+				var $body = $('body');
+				var $html = $('html');
+				
+				// Remove overlay
+				$('.mask-overlay').fadeOut(300, function() {
+					$(this).remove();
+				});
+				
+				// Remove classes
+				$menuWrapper.removeClass('open');
+				$('#mobile-menu-open').removeClass('active');
 				$body.removeClass('page-popup-open');
-				$popup.removeClass('open');
-				$('.sub-menu, .sub-menu-wide').removeAttr('style');
-				$("html").removeClass("no-scroll sidebar-open").height("auto");
-				$("#mobile-menu-open").removeClass('active');
-				$('.has-submenu .menu-link').removeClass('active');
+				$html.removeClass('no-scroll sidebar-open');
+				
+				// Reset submenus
+				$('.sub-menu').hide();
+				$('.has-submenu > a').removeClass('active');
+				
+				console.log('Mobile menu closed');
+			}
+			
+			// Handle window resize
+			$(window).on('resize', function() {
+				if ($(window).width() > 991) {
+					closeMobileMenu();
+					$('.site-header').removeClass('mobile-header');
+					$('body').removeClass('is-mobile-menu');
+				} else {
+					$('.site-header').addClass('mobile-header');
+					$('body').addClass('is-mobile-menu');
+				}
 			});
 
 			/* Magnefic Popup */
@@ -212,6 +342,14 @@ var GPTHEME = GPTHEME || {};
 					Gp.header.removeClass('mobile-header');
 					Gp.body.removeClass('is-mobile-menu');
 					$('.main-nav').addClass('visible');
+					// Close mobile menu if it's open when switching to desktop
+					if ($('.canvas-menu-wrapper').hasClass('open')) {
+						$('.mask-overlay').remove();
+						$('body').removeClass('page-popup-open');
+						$('.canvas-menu-wrapper').removeClass('open');
+						$("html").removeClass("no-scroll sidebar-open").height("auto");
+						$("#mobile-menu-open").removeClass('active');
+					}
 				}
 			}
 		},
@@ -904,6 +1042,42 @@ var GPTHEME = GPTHEME || {};
 	GPTHEME.documentOnReady = {
 		init: function () {
 			GPTHEME.initialize.init();
+
+			// AGGRESSIVE mobile menu initialization - Force mobile classes IMMEDIATELY
+			function forceMobileMenuSetup() {
+				console.log('=== AGGRESSIVE MOBILE MENU SETUP ===');
+				console.log('Window width:', $(window).width());
+				
+				if ($(window).width() <= 991) {
+					console.log('Forcing mobile classes immediately...');
+					$('body').addClass('is-mobile-menu');
+					$('.site-header').addClass('mobile-header');
+					
+					// Force mobile menu button visibility
+					$('#mobile-menu-open').css({
+						'display': 'block',
+						'visibility': 'visible',
+						'opacity': '1',
+						'position': 'relative',
+						'z-index': '10001'
+					});
+					
+					console.log('Mobile classes applied');
+					console.log('Button visible:', $('#mobile-menu-open').is(':visible'));
+				}
+			}
+			
+			// Run immediately
+			forceMobileMenuSetup();
+			
+			// Run after a short delay to override any other scripts
+			setTimeout(forceMobileMenuSetup, 100);
+			setTimeout(forceMobileMenuSetup, 500);
+			
+			// Handle resize
+			$(window).on('resize', function() {
+				forceMobileMenuSetup();
+			});
 
 			$('#animated-wave-one').wavify({
 				height: 20,

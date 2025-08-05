@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        .test-container { max-width: 400px; margin: 0 auto; }
+        .mobile-menu-test {
+            width: 30px;
+            height: 24px;
+            cursor: pointer;
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .mobile-menu-test span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #333;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu-test.active span:first-child {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .mobile-menu-test.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-test.active span:last-child {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        .status { padding: 10px; background: #f0f0f0; margin: 10px 0; }
+        .debug { background: #fff3cd; padding: 10px; margin: 10px 0; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Mobile Menu Debug Test</h1>
+        
+        <div class="status" id="status">Testing mobile menu functionality...</div>
+        
+        <div class="mobile-menu-test" id="test-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="debug" id="debug-info">
+            Debug info will appear here...
+        </div>
+        
+        <button onclick="testOriginalSite()">Test Original Site Menu</button>
+    </div>
+
+    <script src="dependencies/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Test the simple button first
+            $('#test-button').on('click', function() {
+                $(this).toggleClass('active');
+                $('#status').text('Test button clicked! ' + ($(this).hasClass('active') ? 'Active' : 'Inactive'));
+            });
+            
+            // Debug original site
+            setTimeout(function() {
+                var debugInfo = '';
+                debugInfo += 'jQuery loaded: ' + (typeof $ !== 'undefined') + '\n';
+                debugInfo += 'Mobile menu button exists: ' + ($('#mobile-menu-open').length > 0) + '\n';
+                debugInfo += 'Canvas wrapper exists: ' + ($('.canvas-menu-wrapper').length > 0) + '\n';
+                debugInfo += 'Window width: ' + $(window).width() + '\n';
+                debugInfo += 'Mobile header class: ' + $('.site-header').hasClass('mobile-header') + '\n';
+                debugInfo += 'Is mobile menu class: ' + $('body').hasClass('is-mobile-menu') + '\n';
+                
+                $('#debug-info').html('<pre>' + debugInfo + '</pre>');
+            }, 1000);
+        });
+        
+        function testOriginalSite() {
+            // Try to trigger the original mobile menu
+            if ($('#mobile-menu-open').length > 0) {
+                $('#mobile-menu-open').trigger('click');
+                $('#status').text('Triggered original mobile menu click');
+            } else {
+                $('#status').text('Original mobile menu button not found!');
+            }
+        }
+    </script>
+</body>
+</html>
