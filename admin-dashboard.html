@@ -31,6 +31,245 @@
 		* {
 			font-family: 'Poppins', sans-serif !important;
 		}
+
+		/* Dashboard Specific Styles */
+		.dashboard-section {
+			padding: 120px 0 80px;
+			background: #f8fafc;
+			min-height: 100vh;
+		}
+
+		.dashboard-wrapper {
+			background: white;
+			border-radius: 12px;
+			padding: 40px;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		}
+
+		.dashboard-header {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+
+		.dashboard-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: #1e293b;
+			margin-bottom: 10px;
+		}
+
+		.dashboard-subtitle {
+			font-size: 1.125rem;
+			color: #64748b;
+			margin: 0;
+		}
+
+		.dashboard-card {
+			background: white;
+			border-radius: 12px;
+			padding: 30px 25px;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			border: 1px solid #e2e8f0;
+			margin-bottom: 30px;
+			transition: all 0.3s ease;
+			text-align: center;
+		}
+
+		.dashboard-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+		}
+
+		.dashboard-card .card-icon {
+			width: 60px;
+			height: 60px;
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 20px;
+			font-size: 1.5rem;
+			color: white;
+		}
+
+		.dashboard-card:nth-child(1) .card-icon {
+			background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+		}
+
+		.dashboard-card:nth-child(2) .card-icon {
+			background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+		}
+
+		.dashboard-card:nth-child(3) .card-icon {
+			background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+		}
+
+		.dashboard-card:nth-child(4) .card-icon {
+			background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+		}
+
+		.card-title {
+			font-size: 1rem;
+			font-weight: 600;
+			color: #64748b;
+			margin-bottom: 10px;
+		}
+
+		.card-number {
+			font-size: 2rem;
+			font-weight: 700;
+			color: #1e293b;
+			margin: 0;
+		}
+
+		.dashboard-content {
+			margin-top: 40px;
+		}
+
+		.dashboard-panel {
+			background: white;
+			border-radius: 12px;
+			padding: 30px;
+			box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+			border: 1px solid #e2e8f0;
+			margin-bottom: 30px;
+		}
+
+		.panel-title {
+			font-size: 1.25rem;
+			font-weight: 600;
+			color: #1e293b;
+			margin-bottom: 25px;
+		}
+
+		.activity-item {
+			display: flex;
+			align-items: flex-start;
+			padding: 20px 0;
+			border-bottom: 1px solid #f1f5f9;
+		}
+
+		.activity-item:last-child {
+			border-bottom: none;
+		}
+
+		.activity-icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 8px;
+			background: #f1f5f9;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 15px;
+			flex-shrink: 0;
+		}
+
+		.activity-icon i {
+			color: #64748b;
+			font-size: 1rem;
+		}
+
+		.activity-content h4 {
+			font-size: 1rem;
+			font-weight: 600;
+			color: #1e293b;
+			margin-bottom: 5px;
+		}
+
+		.activity-content p {
+			font-size: 0.875rem;
+			color: #64748b;
+			margin-bottom: 5px;
+		}
+
+		.activity-time {
+			font-size: 0.75rem;
+			color: #94a3b8;
+		}
+
+		.quick-actions {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+
+		.action-btn {
+			background: #f8fafc;
+			border: 1px solid #e2e8f0;
+			border-radius: 8px;
+			padding: 15px 20px;
+			color: #475569;
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+			text-align: center;
+		}
+
+		.action-btn:hover {
+			background: #3b82f6;
+			color: white;
+			border-color: #3b82f6;
+			text-decoration: none;
+		}
+
+		/* Mobile Responsiveness */
+		@media (max-width: 768px) {
+			.dashboard-section {
+				padding: 100px 0 60px;
+			}
+
+			.dashboard-wrapper {
+				padding: 25px 15px;
+			}
+
+			.dashboard-title {
+				font-size: 2rem;
+			}
+
+			.dashboard-card {
+				padding: 25px 20px;
+			}
+
+			.dashboard-panel {
+				padding: 20px 15px;
+			}
+
+			.activity-item {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.activity-icon {
+				margin: 0 auto 10px;
+			}
+		}
+
+		/* Hide hamburger menu on desktop screens */  
+		@media (min-width: 993px) {
+			.site-header .astriol-burger-menu,
+			.mobile-header .astriol-burger-menu,
+			#mobile-menu-open {
+				display: none !important;
+			}
+		}
+
+		/* Show hamburger menu on mobile screens */
+		@media (max-width: 992px) {
+			.site-header .astriol-burger-menu,
+			.mobile-header .astriol-burger-menu,
+			#mobile-menu-open {
+				display: inline-block !important;
+			}
+		}
+
+		/* Hamburger menu white color */
+		.site-header .astriol-burger-menu span,
+		.site-header .astriol-burger-menu .bar-one,
+		.site-header .astriol-burger-menu .bar-two,
+		.site-header .astriol-burger-menu .bar-three {
+			background: #fff !important;
+		}
 	</style>
 
 </head>
@@ -42,6 +281,9 @@
 	</a>
 
 	<div id="main_content" class="main-content">
+
+		<!-- Mobile Menu Overlay -->
+		<div class="mask-overlay"></div>
 
 		<!--=========================-->
 		<!--=        Navbar         =-->
@@ -237,7 +479,6 @@
 					<div class="row align-items-center">
 						<div class="col-md-6">
 							<div class="copyright">
-								<p class="copyright-text">Copyright © 2020 Astriol by <a href="https://gptheme.com">GpTheme</a>. All Rights Reserved</p>
 							</div>
 						</div>
 
@@ -264,49 +505,7 @@
 	<!-- Site Scripts -->
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/app.js"></script>
-
-	<!-- MOBILE MENU SCRIPT -->
-	<script>
-		$(document).ready(function() {
-			// Wait for page to fully load
-			setTimeout(function() {
-				// Remove any existing handlers
-				$('#mobile-menu-open').off('click');
-				
-				// Add mobile menu click handler
-				$('#mobile-menu-open').on('click', function(e) {
-					e.preventDefault();
-					e.stopPropagation();
-					
-					var $menu = $('.canvas-menu-wrapper');
-					
-					if ($menu.hasClass('open')) {
-						// Close menu
-						$menu.removeClass('open');
-						$('body').removeClass('page-popup-open');
-						$('html').removeClass('no-scroll');
-						$(this).removeClass('active');
-					} else {
-						// Open menu
-						$menu.addClass('open');
-						$('body').addClass('page-popup-open');
-						$('html').addClass('no-scroll');
-						$(this).addClass('active');
-					}
-				});
-				
-				// Close menu when clicking close button
-				$(document).on('click', '#page-close-main-menu', function(e) {
-					e.preventDefault();
-					$('.canvas-menu-wrapper').removeClass('open');
-					$('body').removeClass('page-popup-open');
-					$('html').removeClass('no-scroll');
-					$('#mobile-menu-open').removeClass('active');
-				});
-				
-			}, 500);
-		});
-	</script>
+	<script src="assets/js/mobile-menu.js"></script>
 
 </body>
 
