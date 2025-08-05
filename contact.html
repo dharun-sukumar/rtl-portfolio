@@ -867,25 +867,6 @@
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/app.js"></script>
 	<script src="assets/js/mobile-menu.js"></script>
-				const savedDir = localStorage.getItem('astriol-rtl') || 'ltr';
-				document.documentElement.setAttribute('dir', savedDir);
-				rtlToggle.textContent = savedDir === 'rtl' ? 'LTR' : 'RTL';
-
-				rtlToggle.addEventListener('click', function() {
-					const html = document.documentElement;
-					if (html.getAttribute('dir') === 'rtl') {
-						html.setAttribute('dir', 'ltr');
-						rtlToggle.textContent = 'RTL';
-						localStorage.setItem('astriol-rtl', 'ltr');
-					} else {
-						html.setAttribute('dir', 'rtl');
-						rtlToggle.textContent = 'LTR';
-						localStorage.setItem('astriol-rtl', 'rtl');
-					}
-				});
-			}
-		});
-	</script>
 
 </body>
 
