@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Alex Johnson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#8B5CF6',
+                        accent: '#F59E0B'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gradient-to-br from-primary via-secondary to-accent text-white overflow-x-hidden">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-float-delayed"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/3 rounded-full blur-2xl animate-pulse"></div>
+    </div>
+
+    <!-- Coming Soon Section -->
+    <section class="min-h-screen flex items-center justify-center relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8 animate-fade-in-up">
+                <!-- Logo/Brand -->
+                <div class="mb-12">
+                    <h1 class="text-4xl font-display font-bold text-white mb-2">Alex Johnson</h1>
+                    <p class="text-white/80">Creative Freelancer</p>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h2 class="text-5xl lg:text-7xl font-display font-bold text-white leading-tight">
+                            Something Amazing
+                            <br />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+                                Is Coming
+                            </span>
+                        </h2>
+                        <p class="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                            I'm working on something special that will showcase my creative work and services. Stay tuned for the big reveal!
+                        </p>
+                    </div>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Launch Countdown</h3>
+                        <div class="grid grid-cols-4 gap-4" id="countdown">
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-bold text-white" id="days">00</div>
+                                <div class="text-sm text-white/70 uppercase tracking-wide">Days</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-bold text-white" id="hours">00</div>
+                                <div class="text-sm text-white/70 uppercase tracking-wide">Hours</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-bold text-white" id="minutes">00</div>
+                                <div class="text-sm text-white/70 uppercase tracking-wide">Minutes</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl lg:text-4xl font-bold text-white" id="seconds">00</div>
+                                <div class="text-sm text-white/70 uppercase tracking-wide">Seconds</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Signup -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Get Notified</h3>
+                        <p class="text-white/80 mb-6">Be the first to know when I launch. No spam, just updates!</p>
+                        <form class="flex flex-col sm:flex-row gap-4" id="notifyForm">
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email" 
+                                class="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent backdrop-blur-sm"
+                                required
+                            >
+                            <button 
+                                type="submit" 
+                                class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-colors duration-300 whitespace-nowrap"
+                            >
+                                Notify Me
+                            </button>
+                        </form>
+                        <p class="text-xs text-white/60 mt-3">
+                            I respect your privacy. Unsubscribe at any time.
+                        </p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-semibold text-white">Follow My Journey</h3>
+                        <div class="flex justify-center space-x-6 rtl:space-x-reverse">
+                            <a href="#" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-all duration-300 group">
+                                <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-all duration-300 group">
+                                <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-all duration-300 group">
+                                <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575-.105.79-.251.79-.546v-1.916c-3.2.693-3.86-1.538-3.86-1.538-.522-1.327-1.275-1.681-1.275-1.681-1.043-.713.079-.698.079-.698 1.153.08 1.76 1.184 1.76 1.184 1.025 1.755 2.688 1.248 3.34.954.104-.741.402-1.248.733-1.535-2.554-.29-5.24-1.276-5.24-5.681 0-1.255.448-2.281 1.184-3.082-.119-.291-.513-1.457.112-3.04 0 0 .963-.309 3.158 1.179.916-.255 1.899-.382 2.876-.387.976.005 1.96.132 2.876.387 2.195-1.488 3.158-1.179 3.158-1.179.625 1.583.231 2.749.112 3.04.736.801 1.184 1.827 1.184 3.082 0 4.417-2.69 5.39-5.252 5.675.413.354.78 1.052.78 2.121v3.142c0 .299.215.645.795.535C20.709 21.637 24 17.339 24 12.25 24 5.896 18.854.75 12.5.75Z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-all duration-300 group">
+                                <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.751-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto">
+                        <h3 class="text-lg font-semibold text-white mb-4">Get In Touch</h3>
+                        <div class="space-y-3 text-white/80">
+                            <div class="flex items-center justify-center space-x-3 rtl:space-x-reverse">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <span>hello@alexjohnson.com</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-3 rtl:space-x-reverse">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span>New York, NY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back to Current Site -->
+                <div class="pt-8">
+                    <a href="index.html" class="inline-flex items-center text-white/80 hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2 rtl:mr-0 rtl:ml-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Visit Current Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Thanks! You'll be notified when we launch.</span>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set launch date (30 days from now)
+            const launchDate = new Date();
+            launchDate.setDate(launchDate.getDate() + 30);
+            
+            const now = new Date().getTime();
+            const distance = launchDate.getTime() - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="col-span-4 text-2xl font-bold text-white">Launched!</div>';
+            }
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Newsletter form
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                const successMessage = document.getElementById('successMessage');
+                successMessage.classList.remove('translate-x-full');
+                
+                // Hide message after 3 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('translate-x-full');
+                }, 3000);
+                
+                // Reset form
+                this.reset();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
